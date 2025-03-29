@@ -48,7 +48,7 @@ const Footer = () => {
           {/* Left - Company Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img 
-    src="https://res.cloudinary.com/drz6fzlpu/image/upload/w_45,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1743103678/Resize_image_project_mcgyze.png" 
+    src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743183289/WhatsApp_Image_2025-03-28_at_8.39.20_AM_phjp9z.jpg" 
     alt="Institute Logo" 
     className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-orange-500 shadow-lg"
   />

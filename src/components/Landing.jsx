@@ -10,13 +10,13 @@ const coursesData = [
           name: "CCNA",
           description:
             "Cisco Certified Network Associate (CCNA) is a foundational certification covering networking fundamentals, IP services, security basics, automation, and programmability. It prepares you for hands-on networking roles.",
-          image: "https://th.bing.com/th/id/OIP.liRjX-jYpnhWj_Axsl4KoAHaEK?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743182767/WhatsApp_Image_2025-03-28_at_7.40.51_AM_iwhnwu.jpg?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
         },
         {
           name: "CCNP",
           description:
             "Cisco Certified Network Professional (CCNP) builds on CCNA skills with advanced enterprise networking, infrastructure, and automation topics, ideal for seasoned network professionals.",
-          image: "https://unremot.com/blog/wp-content/uploads/2022/08/ccnp.jpg",
+          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743182905/WhatsApp_Image_2025-03-28_at_8.12.05_AM_brfw2t.jpg",
         },
       ],
     },
@@ -72,7 +72,7 @@ const Landing = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <motion.div
+      <div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -94,14 +94,14 @@ const Landing = () => {
 
         {/* Right Side: Animated Image */}
         <motion.img
-          src="https://res.cloudinary.com/drz6fzlpu/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1743102748/logo_wf6fxs.jpg"
+          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg"
           alt="AI Learning"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
           className="flex-1 rounded-lg shadow-lg max-w-xs md:max-w-sm"
         />
-      </motion.div>
+      </div>
 
      <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -128,7 +128,7 @@ const Landing = () => {
             {/* Courses Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {category.courses.map((course, idx) => (
-                <motion.div
+                <div
                   key={course.name}
                   className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
                   initial={{ opacity: 0, y: 50 }} // Applied animation
@@ -148,7 +148,7 @@ const Landing = () => {
                     <h3 className="text-lg font-bold text-gray-700">{course.name}</h3>
                     <p className="text-gray-600 text-sm mt-2">{course.description}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
