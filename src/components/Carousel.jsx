@@ -31,7 +31,7 @@ const Carousel = ({ images }) => {
               <img
                 src={student.image}
                 alt={student.name}
-                className="w-full h-40 object-cover rounded-md"
+                className="w-full h-40  rounded-md"
               />
               <h3 className="text-yellow-400 font-bold mt-2">{student.name}</h3>
               <p className="text-gray-600">{student.company}</p>
