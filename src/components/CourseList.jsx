@@ -16,10 +16,9 @@ const CourseList = () => {
     return (
       <div className="mt-16 p-6">
         <Carousel images={students}/>
-      
       </div>
     );
   };
-  
+    
   export default CourseList;
   

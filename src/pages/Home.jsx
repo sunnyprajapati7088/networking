@@ -1,4 +1,5 @@
 import Carousel from "../components/Carousel";
+import ContactUs from "../components/ContactUs";
 import Landing from "../components/Landing";
 
   const students = [
@@ -25,6 +26,7 @@ const Home = () => {
         <Carousel images={students} />
       </div>
       <Landing />
+      <ContactUs/>
     </div>
   );
 };

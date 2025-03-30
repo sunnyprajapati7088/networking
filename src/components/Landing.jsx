@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import ContactUs from "./ContactUs";
 
 // JSON structure with course categories, each with an extended description and image
 const coursesData = [
@@ -57,7 +58,7 @@ const coursesData = [
   ];
 const Landing = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center">
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center bg-gradient-to-r from-orange-500 to-blue-500">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Best IT & Networking Courses | RoboGen</title>
@@ -76,13 +77,13 @@ const Landing = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white shadow-lg rounded-lg"
+        className="w-full bg-gradient-to-r from-orange-400 to-blue-500 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  rounded-lg"
         style={{ minHeight: "80vh" }}
       >
         {/* Left Side: Animated Description */}
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-gray-800">
-            Learn with <span className="text-orange-500">Master Networking & IT with Expert Training!</span>
+            Learn with <span className="text-white-500">Master Networking & IT with Expert Training!</span>
           </h1>
           <p className="text-gray-600 mt-3">
           join the Institute of Network Solution, your gateway to Cisco, Microsoft, Red Hat, AWS, and more! Get industry-recognized certifications and boost your career.
@@ -131,10 +132,10 @@ const Landing = () => {
                 <div
                   key={course.name}
                   className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
-                  initial={{ opacity: 0, y: 50 }} // Applied animation
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                 
+                 
+              
+                 
                 >
                   {/* Course Image */}
                   <img
@@ -156,7 +157,7 @@ const Landing = () => {
       </div>
     </motion.div>
   
-
+      
 
     </div>
   );

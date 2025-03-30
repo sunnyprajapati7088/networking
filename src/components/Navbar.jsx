@@ -12,9 +12,9 @@ const Navbar = () => {
           <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
   <img 
-    src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743183289/WhatsApp_Image_2025-03-28_at_8.39.20_AM_phjp9z.jpg" 
+    src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg" 
     alt="Institute Logo" 
-    className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-orange-500 shadow-lg"
+    className="h-12 w-12 md:h-14 md:w-14  border-2 border-orange-500 shadow-lg"
   />
   <span className="text-xl md:text-2xl font-bold text-gray-900">
     <span className="text-orange-500">Institute</span> of Network Solution

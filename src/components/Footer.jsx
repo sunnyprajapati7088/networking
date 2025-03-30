@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram ,FaYoutube} from "react-icons/fa";
 
 const footerData = {
   "company": {
@@ -27,15 +27,16 @@ const footerData = {
     }
   ],
   "socialMedia": [
-    { "platform": "Facebook", "url": "https://facebook.com/yourpage", "icon": "facebook" },
+    { "platform": "Facebook", "url": "https://www.facebook.com/IIHTJAIPUR?mibextid=ZbWKwL", "icon": "facebook" },
     { "platform": "Twitter", "url": "https://twitter.com/yourhandle", "icon": "twitter" },
-    { "platform": "LinkedIn", "url": "https://linkedin.com/in/yourprofile", "icon": "linkedin" },
-    { "platform": "Instagram", "url": "https://instagram.com/yourprofile", "icon": "instagram" }
+    { "platform": "LinkedIn", "url": "https://www.linkedin.com/company/institute-of-network-solutions/", "icon": "linkedin" },
+
+    { "platform": "Youtube", "url": "https://www.youtube.com/@insjaipur", "icon": "Youtube" }
   ],
   "contact": {
     "email": "info@networksolution.com",
-    "phone": "+91 98765 43210",
-    "address": "123, Tech Street, Bangalore, India"
+    "phone": "+91 07041713818",
+    "address": "Plot No.- 65, Kalyan Colony, Khatipura Road, Jaswant Nagar, Jaipur - 302012 (Near Arti Janana Hospital)"
   }
 };
 
@@ -48,9 +49,9 @@ const Footer = () => {
           {/* Left - Company Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img 
-    src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743183289/WhatsApp_Image_2025-03-28_at_8.39.20_AM_phjp9z.jpg" 
+    src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg" 
     alt="Institute Logo" 
-    className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-orange-500 shadow-lg"
+    className="h-12 w-12 md:h-14 md:w-14 border-2 border-orange-500 shadow-lg"
   />
             <h2 className="text-xl font-semibold">{footerData.company.name}</h2>
             <p className="text-sm mt-2">{footerData.company.about}</p>
@@ -83,13 +84,16 @@ const Footer = () => {
                   social.icon === "facebook" ? FaFacebook :
                   social.icon === "twitter" ? FaTwitter :
                   social.icon === "linkedin" ? FaLinkedin :
-                  FaInstagram;
+                  FaYoutube;
                 return (
                   <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="text-xl hover:text-orange-400 transition">
                     <Icon />
                   </a>
                 );
               })}
+             <a  href="" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-orange-400 transition">
+                    <FaInstagram/>
+                  </a>
             </div>
 
             {/* Contact Details */}
