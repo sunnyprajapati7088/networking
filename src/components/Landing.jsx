@@ -11,7 +11,7 @@ const coursesData = [
           name: "CCNA",
           description:
             "Cisco Certified Network Associate (CCNA) is a foundational certification covering networking fundamentals, IP services, security basics, automation, and programmability. It prepares you for hands-on networking roles.",
-          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743182767/WhatsApp_Image_2025-03-28_at_7.40.51_AM_iwhnwu.jpg?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743435202/ccna_x20rfz.jpg",
         },
         {
           name: "CCNP",

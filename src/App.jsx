@@ -11,6 +11,11 @@ import Signup from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import SlideCourse from "./components/SlideCourse";
 import Placement from "./pages/Placement";
+import AdminDashboard from "./pages/AdminDashboard";
+import AddPlacement from "./components/AddPlacement";
+import EditPlacement from "./components/EditPlacement";
+import ViewPlacement from "./components/ViewPlacement";
+import DeletePlacement from "./components/DeletePlacement";
 
 function App() {
   return (
@@ -27,6 +32,12 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="/admin/add-placement" element={<AddPlacement />} />
+          <Route path="/admin/edit-placement" element={<EditPlacement />} />
+          <Route path="/admin/view-placement" element={<ViewPlacement />} />
+          <Route path="/admin/delete-placement" element={<DeletePlacement />} />
+        </Route>
         </Routes>
       </main>
       <Footer/>

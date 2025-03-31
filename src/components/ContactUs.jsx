@@ -18,12 +18,12 @@ const ContactUs = () => {
           <div className="bg-white text-blue-900 p-6 rounded-lg shadow-lg hover:scale-105 transition">
             <FaPhoneAlt className="text-orange-500 text-4xl mx-auto mb-4" />
             <h3 className="font-bold text-lg">Phone</h3>
-            <p className="text-gray-600">+91 98765 43210</p>
+            <p className="text-gray-600">+91 07041713818</p>
           </div>
           <div className="bg-white text-blue-900 p-6 rounded-lg shadow-lg hover:scale-105 transition">
             <FaEnvelope className="text-orange-500 text-4xl mx-auto mb-4" />
             <h3 className="font-bold text-lg">Email</h3>
-            <p className="text-gray-600">support@krishiconnect.com</p>
+            <p className="text-gray-600">info@networksolution.com</p>
           </div>
           <div className="bg-white text-blue-900 p-6 rounded-lg shadow-lg hover:scale-105 transition">
             <FaMapMarkerAlt className="text-orange-500 text-4xl mx-auto mb-4" />

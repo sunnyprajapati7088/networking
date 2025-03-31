@@ -16,15 +16,17 @@ const About = () => {
 
         {/* Description */}
         <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-          Welcome to the <span className="font-bold text-blue-900">Institute of Network Solution</span>,  
-          where technology meets innovation! We specialize in **networking & IT training**,  
-          offering top-tier courses in **Cisco, Microsoft, AWS, Red Hat, and more**.  
+        About INS
+At INS , we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers. Our industry-leading training programs cover A+, Network+, MCSA, RHCSA, CCNA, CCNP, AWS Cloud, MS Azure, Cybersecurity, CEH, and more.
+
+With internationally certified trainers, state-of-the-art infrastructure, and a hands-on approach, we ensure students gain practical skills and expertise. Beyond technical knowledge, we focus on interview preparation, communication skills, and personality development to make you job-ready.
+
+Join INS and benefit from 100% job placement with opportunities in leading national and international companies .
+
+🚀 Start your journey to a successful IT career today! 
         </p>
 
-        <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-          Our **mission** is to empower individuals with **industry-recognized certifications**  
-          and practical skills to thrive in today’s digital landscape.  
-        </p>
+       
 
         {/* CTA Button */}
         <motion.button
