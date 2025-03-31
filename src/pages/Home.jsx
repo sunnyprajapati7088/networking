@@ -1,6 +1,7 @@
 import Carousel from "../components/Carousel";
 import ContactUs from "../components/ContactUs";
 import Landing from "../components/Landing";
+import SlideCourse from "../components/SlideCourse";
 
   const students = [
     { name: "Rohit", company: "Inventum Technologies", image: "https://th.bing.com/th/id/OIP.lGbo6eNjqJ9WSnCi_jvWewHaKc?rs=1&pid=ImgDetMain" },
@@ -17,10 +18,11 @@ import Landing from "../components/Landing";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-900 to-orange-500 min-h-screen text-white">
+    <div className="bg-gradient-to-br from-orange-200 to-blue-200 min-h-screen text-white">
       {/* Landing Page */}
     
 
+    <SlideCourse/>
       {/* Carousal Section */}
       <div className="mt-10">
         <Carousel images={students} />

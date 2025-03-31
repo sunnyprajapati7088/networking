@@ -78,7 +78,7 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-6  rounded-lg shadow-lg">
+    <div className="w-full max-w-9xl mx-auto p-6  rounded-lg shadow-lg">
       <h2 className="text-center text-white text-2xl font-bold mb-6">
         Meet Our Recently Placed Students
       </h2>
@@ -91,7 +91,7 @@ const Carousel = ({ images }) => {
                 alt={student.name}
                 className="w-full h-[250px] md:h-[300px] object-cover rounded-md"
               />
-              <h3 className="text-orange-500 font-bold mt-3 text-lg">{student.name}</h3>
+              <h3 className="text-orange-100 font-bold mt-3 text-lg">{student.name}</h3>
               <p className="text-gray-600 text-sm">{student.company}</p>
             </div>
           </div>

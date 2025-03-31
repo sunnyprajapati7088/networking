@@ -58,7 +58,7 @@ const coursesData = [
   ];
 const Landing = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center bg-gradient-to-r from-orange-500 to-blue-500">
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center bg-gradient-to-r from-orange-100 to-blue-100">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Best IT & Networking Courses | RoboGen</title>
@@ -77,7 +77,7 @@ const Landing = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="w-full bg-gradient-to-r from-orange-400 to-blue-500 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  rounded-lg"
+        className="w-full bg-gradient-to-r from-orange-200 to-blue-200 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  mt-5 rounded-lg"
         style={{ minHeight: "80vh" }}
       >
         {/* Left Side: Animated Description */}
@@ -108,7 +108,7 @@ const Landing = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white shadow-lg rounded-lg"
+      className="w-full max-w-6xl flex flex-col md:flex-row items-center mt-5 justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  rounded-lg"
       style={{ minHeight: "80vh" }}
     >
       <div className="mt-10 w-full max-w-6xl px-4 md:px-8 mx-auto">

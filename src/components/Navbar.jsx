@@ -73,13 +73,11 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg" 
+                src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
                 alt="Institute Logo" 
-                className="h-12 w-12 md:h-14 md:w-14  border-2 border-orange-500 shadow-lg"
+                className="h-11 md:h-12  w-[100px] md:w-[150px] lg:w-[200px] "
               />
-              <span className="text-xl md:text-2xl font-bold text-gray-900">
-                <span className="text-orange-500">Institute</span> of Network Solution
-              </span>
+            
             </Link>
           </div>
 
@@ -87,7 +85,7 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-orange-500">Home</Link>
             <Link to="/courses" className="text-gray-700 hover:text-orange-500">Courses</Link>
-            <Link to="/plans" className="text-gray-700 hover:text-orange-500">Plans</Link>
+            <Link to="/placement" className="text-gray-700 hover:text-orange-500">Placement</Link>
             <Link to="/about" className="text-gray-700 hover:text-orange-500">About</Link>
             <Link to="/login" className="text-gray-700 hover:text-orange-500">Login</Link>
           </div>
