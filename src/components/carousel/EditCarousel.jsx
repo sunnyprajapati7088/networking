@@ -1,39 +1,37 @@
 import { useState, useEffect } from "react";
 
-const EditPlacement = () => {
-  const [placements, setPlacements] = useState([]);
+const EditCarousel = () => {
+  const [carouselItems, setCarouselItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch placement data from the API
   useEffect(() => {
-    const fetchPlacements = async () => {
+    const fetchCarouselItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/placement/");
+        const response = await fetch("http://localhost:5000/api/carousel/");
         if (!response.ok) {
-          throw new Error("Failed to fetch placements");
+          throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        setPlacements(data);
+        setCarouselItems(data);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching placements:", error);
+        console.error("Error fetching carousel:", error);
         setLoading(false);
       }
     };
 
-    fetchPlacements();
+    fetchCarouselItems();
   }, []);
 
-  // Toggle placement status between active and inactive
   const toggleStatus = async (id, currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/placement/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/carousel/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          isActive: !currentStatus, // Toggle status
+          isActive: !currentStatus,
         }),
       });
 
@@ -41,12 +39,9 @@ const EditPlacement = () => {
         throw new Error("Failed to update status");
       }
 
-      // Update the status locally after successful update
-      setPlacements((prevPlacements) =>
-        prevPlacements.map((placement) =>
-          placement._id === id
-            ? { ...placement, isActive: !currentStatus }
-            : placement
+      setCarouselItems((prevItems) =>
+        prevItems.map((item) =>
+          item._id === id ? { ...item, isActive: !currentStatus } : item
         )
       );
     } catch (error) {
@@ -55,28 +50,23 @@ const EditPlacement = () => {
   };
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen bg-blue-200">
-        <div className="w-16 h-16 border-4 border-t-4 border-blue-600 rounded-full animate-spin"></div>
-      </div>
-    );
+    return <div>Loading...</div>;
   }
 
   return (
-    <div className="p-6 bg-orange-200 min-h-screen">
-      <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-6">
-        Edit Placement Data
+    <div className="p-6 bg-gray-200 min-h-screen">
+      <h1 className="text-3xl font-bold text-center text-blue-800 mb-6">
+        Edit Carousel Items
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {placements.map((item) => (
+        {carouselItems.map((item) => (
           <div key={item._id} className="bg-white shadow-xl rounded-lg overflow-hidden">
             <img
               src={item.image}
-              alt={item.company}
+              alt="Carousel Item"
               className="w-full h-64 object-cover"
             />
             <div className="p-4 bg-blue-200">
-              <p className="font-semibold text-lg text-blue-800">{item.company}</p>
               <p className={`font-semibold text-lg ${item.isActive ? "text-green-500" : "text-red-500"}`}>
                 Status: {item.isActive ? "Active" : "Inactive"}
               </p>
@@ -94,4 +84,4 @@ const EditPlacement = () => {
   );
 };
 
-export default EditPlacement;
+export default EditCarousel;

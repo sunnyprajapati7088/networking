@@ -17,7 +17,7 @@ const coursesData = [
           name: "CCNP",
           description:
             "Cisco Certified Network Professional (CCNP) builds on CCNA skills with advanced enterprise networking, infrastructure, and automation topics, ideal for seasoned network professionals.",
-          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743182905/WhatsApp_Image_2025-03-28_at_8.12.05_AM_brfw2t.jpg",
+          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743438892/ccnp_ahqtns.jpg",
         },
       ],
     },
@@ -83,9 +83,9 @@ const Landing = () => {
         {/* Left Side: Animated Description */}
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-gray-800">
-            Learn with <span className="text-white-500">Master Networking & IT with Expert Training!</span>
+            Learn with <span className="text-blue-500">Master Networking & IT with Expert Training!</span>
           </h1>
-          <p className="text-gray-600 mt-3">
+          <p className="text-blue-600 mt-3">
           join the Institute of Network Solution, your gateway to Cisco, Microsoft, Red Hat, AWS, and more! Get industry-recognized certifications and boost your career.
           </p>
           <button className="mt-4 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300">

@@ -1,98 +1,50 @@
-// import React from "react";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-// const SlideCourse = () => {
-//    const  images= [
-//     {image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png"},
-//     {image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png"}   ,    
-//  {image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png"}
-//       ]
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 600,
-//     slidesToShow: 1,  // Show one image by default
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 2500,
-//     cssEase: "ease-in-out",
-//     pauseOnHover: true,
-//     responsive: [
-//       { breakpoint: 1024, settings: { slidesToShow: 1 } }, // Laptops
-//       { breakpoint: 768, settings: { slidesToShow: 1 } },  // Tablets
-//       { breakpoint: 480, settings: { slidesToShow: 1 } },  // Mobile
-//     ],
-//   };
-
-//   return (
-//     <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 mx-auto">
-     
-//       <Slider {...settings}>
-//         {images.map((student, index) => (
-//           <div key={index} className="p-4">
-//             <div className="bg-white rounded-lg shadow-md p-4 text-center hover:scale-105 transition-transform duration-300">
-//               <img
-//                 src={student.image}
-//                 alt={student.name}
-//                 className="w-full h-[250px] md:h-[300px] object-cover rounded-md"
-//               />
-//               <h3 className="text-orange-600 font-bold mt-3 text-lg">{student.name}</h3>
-//               <p className="text-gray-600 text-sm">{student.company}</p>
-//             </div>
-//           </div>
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// };
-
-// export default SlideCourse;
-
-
-import React from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const SlideCourse = () => {
-  const images = [
-    { image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png" },
-    { image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png" },
-    { image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743362331/crousal_plzult.png" }
-  ];
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/carousel")
+      .then((res) => res.json())
+      .then((data) => {
+        // Remove duplicate images based on URL
+        const uniqueImages = Array.from(new Set(data.map((img) => img.image))).map((image) =>
+          data.find((img) => img.image === image)
+        );
+        setImages(uniqueImages);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     cssEase: "ease-in-out",
-    pauseOnHover: true,
-    arrows: false, // Hide arrows for mobile
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 1 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
+    pauseOnHover: false,
+    arrows: false,
+    adaptiveHeight: true,
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] overflow-hidden">
       <Slider {...settings}>
-        {images.map((student, index) => (
-          <div key={index} className="p-2">
-            <div className="bg-white rounded-lg shadow-md text-center hover:scale-105 transition-transform duration-300">
-              <img
-                src={student.image}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-auto object-cover rounded-md"
-              />
-            </div>
+        {images.map((slide, index) => (
+          <div key={index} className="relative w-full h-full">
+            <img
+              src={slide.image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+            {/* Optional Overlay with Text */}
+            
           </div>
         ))}
       </Slider>

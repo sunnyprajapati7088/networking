@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 
-const Placement = () => {
-  const [placements, setPlacements] = useState([]);
+const ViewCarousel = () => {
+  const [carousels, setcarousels] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch placement data from the local API
+  // Fetch carousel data from the local API
   useEffect(() => {
-    const fetchPlacements = async () => {
+    const fetchcarousels = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/placement/");
+        const response = await fetch("http://localhost:5000/api/carousel");
         if (!response.ok) {
-          throw new Error("Failed to fetch placements");
+          throw new Error("Failed to fetch carousels");
         }
         const data = await response.json();
-        setPlacements(data);
+        setcarousels(data.filter((carousel) => carousel.isActive === true));
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching placements:", error);
+        console.error("Error fetching carousels:", error);
         setLoading(false);
       }
     };
 
-    fetchPlacements();
+    fetchcarousels();
   }, []);
 
   if (loading) {
@@ -34,9 +34,9 @@ const Placement = () => {
 
   return (
     <div className="p-6 bg-orange-200 min-h-screen">
-      <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-6">Placement Companies</h1>
+      <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-6">carousel Companies</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {placements.map((item, index) => (
+        {carousels.map((item, index) => (
           <div key={index} className="bg-white shadow-xl rounded-lg overflow-hidden transform transition-transform hover:scale-105">
             <img
               src={item.image}
@@ -53,4 +53,4 @@ const Placement = () => {
   );
 };
 
-export default Placement;
+export default  ViewCarousel;

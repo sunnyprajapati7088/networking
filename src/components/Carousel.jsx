@@ -79,7 +79,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="w-full max-w-9xl mx-auto p-6  rounded-lg shadow-lg">
-      <h2 className="text-center text-white text-2xl font-bold mb-6">
+      <h2 className="text-center text-blue-500 text-2xl font-bold mb-6">
         Meet Our Recently Placed Students
       </h2>
       <Slider {...settings}>

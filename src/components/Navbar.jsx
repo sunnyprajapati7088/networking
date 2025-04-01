@@ -104,7 +104,7 @@ const Navbar = () => {
           <div className="md:hidden bg-white p-4 shadow-lg">
             <Link to="/" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/courses" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Courses</Link>
-            <Link to="/plans" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Plans</Link>
+            <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>placement</Link>
             <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
             <Link to="/login" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Login</Link>
           </div>

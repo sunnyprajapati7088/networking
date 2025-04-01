@@ -13,6 +13,8 @@
     "@cloudinary/react": "^1.14.1",
     "@cloudinary/url-gen": "^1.21.0",
     "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "env": "^0.0.2",
     "framer-motion": "^12.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

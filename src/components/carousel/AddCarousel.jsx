@@ -101,7 +101,7 @@
 
 import { useState } from "react";
 
-const AddPlacement = () => {
+const  AddCarousel= () => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -148,7 +148,7 @@ const AddPlacement = () => {
         // Add any other data you want to send to the backend
       };
 
-      const placementResponse = await fetch("http://localhost:5000/api/placement/add", {
+      const placementResponse = await fetch("http://localhost:5000/api/carousel/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -157,7 +157,7 @@ const AddPlacement = () => {
       });
 
       if (placementResponse.ok) {
-        alert("Placement data added successfully!");
+        alert("=Carousel data added successfully!");
       } else {
         throw new Error("Failed to add placement data.");
       }
@@ -171,9 +171,9 @@ const AddPlacement = () => {
 
   return (
     <div className="p-6 bg-white shadow-md rounded-md">
-      <h1 className="text-2xl font-bold mb-4">Add Placement Data</h1>
+      <h1 className="text-2xl font-bold mb-4">Add Carousel Data</h1>
       <div className="mb-4">
-        <label className="block text-gray-700">Upload Placement Image:</label>
+        <label className="block text-gray-700">Upload Carousel Image:</label>
         <input
           type="file"
           accept="image/*"
@@ -215,4 +215,4 @@ const AddPlacement = () => {
   );
 };
 
-export default AddPlacement;
+export default AddCarousel;

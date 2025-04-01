@@ -16,6 +16,9 @@ import AddPlacement from "./components/AddPlacement";
 import EditPlacement from "./components/EditPlacement";
 import ViewPlacement from "./components/ViewPlacement";
 import DeletePlacement from "./components/DeletePlacement";
+import AddCarousel from "./components/carousel/AddCarousel";
+import ViewCarousel from "./components/carousel/ViewCarousel";
+import EditCarousel from "./components/carousel/EditCarousel";
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
           <Route path="/admin/edit-placement" element={<EditPlacement />} />
           <Route path="/admin/view-placement" element={<ViewPlacement />} />
           <Route path="/admin/delete-placement" element={<DeletePlacement />} />
+          <Route path="/admin/add-carousel" element={<AddCarousel/>} />
+          <Route path="/admin/view-carousel" element={<ViewCarousel />} />
+          <Route path="/admin/edit-Carousel" element={<EditCarousel />} />
         </Route>
         </Routes>
       </main>
