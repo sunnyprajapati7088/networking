@@ -128,11 +128,16 @@ const  AddCarousel= () => {
 
     try {
       // Upload image to Cloudinary
+      const authToken = localStorage.getItem("authToken");
+
       const response = await fetch("http://localhost:5000/api/images/upload", {
         method: "POST",
+        headers: {
+          Authorization: `Bearer ${authToken}`, // Adding the token in the Authorization header
+        },
         body: formData,
       });
-
+      
       if (!response.ok) {
         throw new Error("Upload failed");
       }

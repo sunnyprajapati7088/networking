@@ -148,13 +148,16 @@ const AddPlacement = () => {
         // Add any other data you want to send to the backend
       };
 
+      const token = localStorage.getItem("authToken");
       const placementResponse = await fetch("http://localhost:5000/api/placement/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+           Authorization: `Bearer ${token}`
         },
         body: JSON.stringify(placementData),
       });
+      
 
       if (placementResponse.ok) {
         alert("Placement data added successfully!");

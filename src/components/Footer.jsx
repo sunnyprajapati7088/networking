@@ -240,7 +240,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="relative group bg-green-500 text-white p-3 rounded-full shadow-lg hover:scale-110 transition gap-5"
         >
-          <FaWhatsapp size={24} />
+       <div className="flex gap-2">   <FaWhatsapp size={24} /><span>Whatsapp</span></div>
           <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
             WhatsApp
           </span>
@@ -251,7 +251,7 @@ const Footer = () => {
           href="tel:+917041713818" 
           className="relative group bg-blue-500 text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
         >
-          <FaPhone size={24} />
+        <div className="flex gap-2">  <FaPhone size={24} /><span>Call back Carrer</span></div>
           <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
             Call Back
           </span>

@@ -1,119 +1,61 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const Carousel = () => {
+  const images = [
+    { name: "Rohit", company: "Inventum Technologies", image: "https://th.bing.com/th/id/OIP.lGbo6eNjqJ9WSnCi_jvWewHaKc?rs=1&pid=ImgDetMain" },
+    { name: "Rahul", company: "Zindagi Technologies", image: "https://th.bing.com/th/id/OIP.CeVw2_HaICwkYWMl69PXvgHaIt?w=160&h=188&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+    { name: "Karmanya", company: "Raitel", image: "https://th.bing.com/th/id/OIP.8KuzEsMqjiosvFxgulknrAHaJ1?rs=1&pid=ImgDetMain" },
+    { name: "Amit", company: "Kwikzo", image: "https://th.bing.com/th/id/OIP.Gso_jiwJn2HWmKdoug0ajgAAAA?rs=1&pid=ImgDetMain" },
+    { name: "Aayush", company: "Saffron", image: "https://th.bing.com/th/id/OIP.8KuzEsMqjiosvFxgulknrAHaJ1?rs=1&pid=ImgDetMain" },
+    { name: "Pitamber", company: "Tech Mahindra", image: "https://th.bing.com/th/id/OIP.DJ5JkOVWEfAZzdp5R9-lugHaHa?w=215&h=216&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+    { name: "Pooja", company: "Ekaga", image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743182905/WhatsApp_Image_2025-03-28_at_8.12.05_AM_brfw2t.jpg" },
+    { name: "Hema", company: "ACPL", image: "https://th.bing.com/th/id/OIP.DJ5JkOVWEfAZzdp5R9-lugHaHa?w=215&h=216&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+    { name: "Vikas", company: "Infosys", image: "https://th.bing.com/th/id/OIP.sD_JkUegCJD9zYhKn1JYEwHaFj?rs=1&pid=ImgDetMain" },
+    { name: "Meera", company: "TCS", image: "https://th.bing.com/th/id/OIP.O4FrFADr2oyYmZcbsHpUkwAAAA?rs=1&pid=ImgDetMain" }
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 5, // Show 3 images by default
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    cssEase: "ease-in-out",
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } }, // Laptops/Tablets
+      { breakpoint: 768, settings: { slidesToShow: 1 } },  // Mobile
+      { breakpoint: 480, settings: { slidesToShow: 1 } }   // Small Mobile
+    ]
+  };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
-                alt="Institute Logo" 
-                className="h-11 md:h-12 w-[100px] md:w-[150px] lg:w-[200px]"
+    <div className="w-[100%] max-w-screen-xl mx-auto p-4 bg-gray-100 lg:mt-8">
+      <h2 className="text-center text-gray-800 text-2xl font-semibold mb-6">
+        Recently Placed Students
+      </h2>
+      <Slider {...settings}>
+        {images.map((student, index) => (
+          <div key={index} className="p-3">
+            <div className="bg-white rounded-xl shadow-lg p-4 text-center hover:scale-105 transition-transform duration-300">
+              <img
+                src={student.image}
+                alt={student.name}
+                className="w-32 h-32 object-cover rounded-full mx-auto border-2 border-gray-300"
               />
-            </Link>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 items-center">
-            <Link to="/" className="text-gray-700 hover:text-orange-500">Home</Link>
-
-            {/* Dropdown Menu for Courses */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
-                onBlur={() => setTimeout(() => setIsDropdownOpen(false), 200)}
-                className="text-gray-700 hover:text-orange-500 focus:outline-none"
-              >
-                Courses ▼
-              </button>
-              {isDropdownOpen && (
-                <ul className="absolute bg-white shadow-md mt-2 w-40 border rounded-md">
-                  <li>
-                    <Link 
-                      to="/courses/web-development" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-orange-100"
-                    >
-                      Web Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/courses/data-science" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-orange-100"
-                    >
-                      Data Science
-                    </Link>
-                  </li>
-                </ul>
-              )}
+              <h3 className="text-gray-700 font-semibold mt-2 text-lg">{student.name}</h3>
+              <p className="text-gray-500 text-sm">{student.company}</p>
             </div>
-
-            <Link to="/placement" className="text-gray-700 hover:text-orange-500">Placement</Link>
-            <Link to="/about" className="text-gray-700 hover:text-orange-500">About</Link>
-            <Link to="/login" className="text-gray-700 hover:text-orange-500">Login</Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-700 focus:outline-none"
-          >
-            ☰
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden bg-white p-4 shadow-lg">
-            <Link to="/" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Home</Link>
-
-            {/* Mobile Dropdown */}
-            <div>
-              <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full text-left py-2 text-gray-700 hover:text-orange-500"
-              >
-                Courses ▼
-              </button>
-              {isDropdownOpen && (
-                <ul className="bg-gray-100 rounded-md">
-                  <li>
-                    <Link 
-                      to="/courses/web-development" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-orange-200"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Web Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/courses/data-science" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-orange-200"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Data Science
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </div>
-
-            <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Placement</Link>
-            <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
-            <Link to="/login" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Login</Link>
-          </div>
-        )}
-      </div>
-    </nav>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
-export default Navbar;
+export default Carousel;

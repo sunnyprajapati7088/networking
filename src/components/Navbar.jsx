@@ -1,195 +1,203 @@
-// // import { useState } from "react";
-// // import { Link } from "react-router-dom";
-
-// // const Navbar = () => {
-// //   const [isOpen, setIsOpen] = useState(false);
-
-// //   return (
-// //     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-// //       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-// //         <div className="flex justify-between items-center h-16">
-// //           {/* Logo */}
-// //           <div className="flex items-center">
-// //           <Link to="/" className="flex items-center space-x-2">
-// //   <img 
-// //     src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg" 
-// //     alt="Institute Logo" 
-// //     className="h-12 w-12 md:h-14 md:w-14  border-2 border-orange-500 shadow-lg"
-// //   />
-// //   <span className="text-xl md:text-2xl font-bold text-gray-900">
-// //     <span className="text-orange-500">Institute</span> of Network Solution
-// //   </span>
-// // </Link>
-
-// //           </div>
-
-// //           {/* Desktop Menu */}
-// //           <div className="hidden md:flex space-x-6">
-// //             <Link to="/" className="text-gray-700 hover:text-orange-500">Home</Link>
-// //             <Link to="/courses" className="text-gray-700 hover:text-orange-500">Courses</Link>
-// //             <Link to="/plans" className="text-gray-700 hover:text-orange-500">Plans</Link>
-// //             <Link to="/about" className="text-gray-700 hover:text-orange-500">About</Link>
-// //             <Link to="/login" className="text-gray-700 hover:text-orange-500">Login</Link>
-// //           </div>
-
-// //           {/* Mobile Menu Button */}
-// //           <button
-// //             onClick={() => setIsOpen(!isOpen)}
-// //             className="md:hidden text-gray-700 focus:outline-none"
-// //           >
-// //             ☰
-// //           </button>
-// //         </div>
-
-// //         {/* Mobile Menu */}
-// //         {isOpen && (
-// //           <div className="md:hidden bg-white p-4 shadow-lg">
-// //             <Link to="/" className="block py-2 text-gray-700 hover:text-orange-500">Home</Link>
-// //             <Link to="/courses" className="block py-2 text-gray-700 hover:text-orange-500">Courses</Link>
-// //             <Link to="/plans" className="block py-2 text-gray-700 hover:text-orange-500">Plans</Link>
-// //             <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500">About</Link>
-// //             <Link to="/login" className="block py-2 text-gray-700 hover:text-orange-500">Login</Link>
-// //           </div>
-// //         )}
-// //       </div>
-// //     </nav>
-// //   );
-// // };
-
-// // export default Navbar;
-
-
-// import { useState } from "react";
+// import React, { useState } from "react";
 // import { Link } from "react-router-dom";
+// import { FaBars, FaTimes } from "react-icons/fa";
+// import Login from './Login'; // Import the Login component
 
 // const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false);
+//   const [showLogin, setShowLogin] = useState(false); // State for controlling login visibility
 
 //   return (
-//     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+//     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
 //       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-16">
+//         <div className="flex justify-between items-center h-20">
 //           {/* Logo */}
-//           <div className="flex items-center">
-//             <Link to="/" className="flex items-center space-x-2">
-//               <img 
-//                 src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
-//                 alt="Institute Logo" 
-//                 className="h-11 md:h-12  w-[100px] md:w-[150px] lg:w-[200px] "
-//               />
-            
-//             </Link>
-//           </div>
-
+//           <Link to="/" className="flex items-center space-x-2">
+//             <img 
+//               src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
+//               alt="Institute Logo" 
+//               className="h-12 md:h-14 w-auto"
+//             />
+//           </Link>
+          
 //           {/* Desktop Menu */}
-//           <div className="hidden md:flex space-x-6">
-//             <Link to="/" className="text-gray-700 hover:text-orange-500">Home</Link>
-//             <Link to="/courses" className="text-gray-700 hover:text-orange-500">Courses</Link>
-//             <Link to="/placement" className="text-gray-700 hover:text-orange-500">Placement</Link>
-//             <Link to="/about" className="text-gray-700 hover:text-orange-500">About</Link>
-//             <Link to="/login" className="text-gray-700 hover:text-orange-500">Login</Link>
+//           <div className="hidden md:flex space-x-8 items-center">
+//             <Link to="/" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">Home</Link>
+//             <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">Placement</Link>
+//             <Link to="/about" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">About</Link>
+//             <button 
+//               onClick={() => setShowLogin(true)} // Show login form
+//               className="text-gray-700 hover:text-orange-500 font-medium text-[20px]"
+//             >
+//               Login
+//             </button>
 //           </div>
-
+          
 //           {/* Mobile Menu Button */}
-//           <button
-//             onClick={() => setIsOpen(!isOpen)}
-//             className="md:hidden text-gray-700 focus:outline-none"
-//           >
-//             ☰
+//           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-700 focus:outline-none">
+//             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
 //           </button>
 //         </div>
 
 //         {/* Mobile Menu */}
 //         {isOpen && (
-//           <div className="md:hidden bg-white p-4 shadow-lg">
+//           <div className="md:hidden bg-white p-4 shadow-lg border-t border-gray-200">
 //             <Link to="/" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Home</Link>
-//             <Link to="/courses" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Courses</Link>
-//             <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>placement</Link>
+//             <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Placement</Link>
 //             <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
-//             <Link to="/login" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Login</Link>
+//             <button 
+//               onClick={() => setShowLogin(true)} // Show login form
+//               className="block py-2 text-gray-700 hover:text-orange-500" 
+//             >
+//               Login
+//             </button>
 //           </div>
 //         )}
 //       </div>
+
+//       {/* Show login form when state is true */}
+//       {showLogin && <Login setShowLogin={setShowLogin} />}
 //     </nav>
 //   );
 // };
 
 // export default Navbar;
 
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Login from './Login'; // Import the Login component
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false); // State for controlling login visibility
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for the dropdown menu
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
-                alt="Institute Logo" 
-                className="h-11 md:h-12 w-[100px] md:w-[150px] lg:w-[200px]"
-              />
-            </Link>
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743360843/logo_axtiqg.png" 
+              alt="Institute Logo" 
+              className="h-12 md:h-14 w-auto"
+            />
+          </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-orange-500">Home</Link>
-            
-            <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-              <button className="text-gray-700 hover:text-orange-500">Courses</button>
+          <div className="hidden md:flex space-x-8 items-center">
+            <Link to="/" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">Home</Link>
+            <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">Placement</Link>
+            <Link to="/about" className="text-gray-700 hover:text-orange-500 font-medium text-[20px]">About</Link>
+
+            {/* Dropdown Menu */}
+            <div className="relative">
+              <button 
+                onClick={() => setDropdownOpen(!dropdownOpen)} 
+                className="block py-2 text-gray-700 w-full text-left hover:text-orange-500 focus:outline-none"
+              >
+                Courses
+              </button>
               {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2">
-                  <Link to="/courses" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">All Courses</Link>
-                  <Link to="/course1" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Course 1</Link>
-                  <Link to="/course2" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Course 2</Link>
+                <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-50 w-48">
+                  <Link 
+                    to="/courses" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    All Courses
+                  </Link>
+                  <Link 
+                    to="/course1" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Web Development
+                  </Link>
+                  <Link 
+                    to="/course2" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Network Security
+                  </Link>
                 </div>
               )}
             </div>
-            
-            <Link to="/placement" className="text-gray-700 hover:text-orange-500">Placement</Link>
-            <Link to="/about" className="text-gray-700 hover:text-orange-500">About</Link>
-            <Link to="/login" className="text-gray-700 hover:text-orange-500">Login</Link>
+
+            <button 
+              onClick={() => setShowLogin(true)} // Show login form
+              className="text-gray-700 hover:text-orange-500 font-medium text-[20px]"
+            >
+              Login
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-700 focus:outline-none"
-          >
-            ☰
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-700 focus:outline-none">
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white p-4 shadow-lg">
+          <div className="md:hidden bg-white p-4 shadow-lg border-t border-gray-200">
             <Link to="/" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Placement</Link>
+            <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
+
+            {/* Dropdown Menu for Mobile */}
             <div className="relative">
-              <button onClick={() => setDropdownOpen(!dropdownOpen)} className="block py-2 text-gray-700 w-full text-left hover:text-orange-500">Courses ▼</button>
+              <button 
+                onClick={() => setDropdownOpen(!dropdownOpen)} 
+                className="block py-2 text-gray-700 w-full text-left hover:text-orange-500"
+              >
+                Courses
+              </button>
               {dropdownOpen && (
-                <div className="ml-4 border-l-2 border-gray-300">
-                  <Link to="/courses" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>All Courses</Link>
-                  <Link to="/course1" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Course 1</Link>
-                  <Link to="/course2" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Course 2</Link>
+                <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-50 w-48">
+                  <Link 
+                    to="/courses" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    All Courses
+                  </Link>
+                  <Link 
+                    to="/course1" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Web Development
+                  </Link>
+                  <Link 
+                    to="/course2" 
+                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Network Security
+                  </Link>
                 </div>
               )}
             </div>
-            <Link to="/placement" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Placement</Link>
-            <Link to="/about" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
-            <Link to="/login" className="block py-2 text-gray-700 hover:text-orange-500" onClick={() => setIsOpen(false)}>Login</Link>
+
+            <button 
+              onClick={() => setShowLogin(true)} // Show login form
+              className="block py-2 text-gray-700 hover:text-orange-500" 
+            >
+              Login
+            </button>
           </div>
         )}
       </div>
+
+      {/* Show login form when state is true */}
+      {showLogin && <Login setShowLogin={setShowLogin} />}
     </nav>
   );
 };
 
 export default Navbar;
+

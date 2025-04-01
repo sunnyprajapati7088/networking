@@ -28,22 +28,22 @@ const SlideCourse = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "ease-in-out",
-    pauseOnHover: false,
+    pauseOnHover: true,
     arrows: false,
-    adaptiveHeight: true,
+    adaptiveHeight: false, // Ensures all slides have the same height
   };
 
   return (
-    <div className="w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] overflow-hidden">
+    <div className="w-full min-w-screen-lg mx-auto">
       <Slider {...settings}>
         {images.map((slide, index) => (
-          <div key={index} className="relative w-full h-full">
+          <div key={index} className="relative w-full h-[500px]"> {/* Fixed height */}
             <img
               src={slide.image}
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
-            {/* Optional Overlay with Text */}
+            {/* Optional Overlay with Caption */}
             
           </div>
         ))}

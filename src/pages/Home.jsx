@@ -1,3 +1,4 @@
+
 import Carousel from "../components/Carousel";
 import ContactUs from "../components/ContactUs";
 import Landing from "../components/Landing";
@@ -18,15 +19,13 @@ import SlideCourse from "../components/SlideCourse";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-orange-200 to-blue-200 min-h-screen text-white">
+    <div className=" min-h-screen text-white">
       {/* Landing Page */}
     
 
     <SlideCourse/>
       {/* Carousal Section */}
-      <div className="mt-10">
-        <Carousel images={students} />
-      </div>
+     <Carousel/>
       <Landing />
       <ContactUs/>
     </div>

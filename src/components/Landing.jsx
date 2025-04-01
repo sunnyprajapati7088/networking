@@ -77,30 +77,29 @@ const Landing = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="w-full bg-gradient-to-r from-orange-200 to-blue-200 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  mt-5 rounded-lg"
+        className="w-full bg-gradient-to-r from-orange-100 to-blue-100 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  mt-5 rounded-lg"
         style={{ minHeight: "80vh" }}
       >
         {/* Left Side: Animated Description */}
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-gray-800">
-            Learn with <span className="text-blue-500">Master Networking & IT with Expert Training!</span>
-          </h1>
-          <p className="text-blue-600 mt-3">
-          join the Institute of Network Solution, your gateway to Cisco, Microsoft, Red Hat, AWS, and more! Get industry-recognized certifications and boost your career.
-          </p>
-          <button className="mt-4 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300">
+          Transforming Careers Since 1998 
+                 </h1>
+          <p className="text-blue-600 text-2xl  mt-3">
+          Become a Network Engineer, Cloud Engineer, or Security Engineer and Get 100% Job!           </p>
+          <button className="mt-4 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-100 transition duration-300">
             Explore Courses
           </button>
         </div>
 
         {/* Right Side: Animated Image */}
         <motion.img
-          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743102748/logo_wf6fxs.jpg"
+          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743524059/zucyqw5ft6wn5bwlici8.jpg"
           alt="AI Learning"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex-1 rounded-lg shadow-lg max-w-xs md:max-w-sm"
+          className="flex-1 rounded-lg shadow-lg max-w-xs md:max-w-sm "
         />
       </div>
 

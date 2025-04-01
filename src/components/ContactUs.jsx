@@ -3,10 +3,10 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
-    <div className="bg-gradient-to-br from-orange-200 to-blue-200  mt-5 text-white py-16 px-6">
+    <div className="  text-blue-500 py-16 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className="text-center text-4xl font-bold text-white mb-6">
+        <h2 className="text-center text-4xl font-bold text-black mb-6">
           Contact Us
         </h2>
         <p className="text-center text-lg text-black-200 mb-12">

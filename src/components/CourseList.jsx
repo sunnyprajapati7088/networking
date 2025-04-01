@@ -1,4 +1,4 @@
-import Carousel from "../components/Carousel";
+// import Carousel from "../components/Carousel";
 import Landing from "../components/Landing";
 
 const CourseList = () => {
@@ -15,7 +15,7 @@ const CourseList = () => {
   
     return (
       <div className="mt-16 p-6">
-        <Carousel images={students}/>
+        {/* <Carousel images={students}/> */}
       </div>
     );
   };

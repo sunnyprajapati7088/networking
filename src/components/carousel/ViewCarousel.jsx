@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 const ViewCarousel = () => {
   const [carousels, setcarousels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,10 +8,10 @@ const ViewCarousel = () => {
   useEffect(() => {
     const fetchcarousels = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/carousel");
-        if (!response.ok) {
-          throw new Error("Failed to fetch carousels");
-        }
+        const authToken = localStorage.getItem("authToken");
+        const response =  await axios.get("http://localhost:5000/api/carousel", {
+                  headers: { Authorization: `Bearer ${authToken}` }, // Attach token
+                });
         const data = await response.json();
         setcarousels(data.filter((carousel) => carousel.isActive === true));
         setLoading(false);
@@ -20,7 +20,7 @@ const ViewCarousel = () => {
         setLoading(false);
       }
     };
-
+console.log(carousels)
     fetchcarousels();
   }, []);
 
