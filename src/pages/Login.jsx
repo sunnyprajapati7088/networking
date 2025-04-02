@@ -96,6 +96,91 @@
 // export default Login;
 
 
+// import React, { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+
+// const Login = ({ closeModal }) => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [error, setError] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setError(""); 
+
+//     try {
+//       const response = await fetch("http://localhost:5000/api/auth/login", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ email, password }),
+//       });
+
+//       const data = await response.json();
+  
+//       if (!response.ok) {
+//         throw new Error(data.message || "Login failed");
+//       }
+
+//       localStorage.setItem("authToken", data.token);
+//       alert("Login successful!");
+//       navigate("/dashboard");
+//       closeModal(); // Close the modal after successful login
+//     } catch (err) {
+//       setError(err.message || "Network error. Please try again.");
+//     }
+//   };
+
+//   return (
+//     <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+//       <h2 className="text-3xl font-bold text-blue-900 text-center mb-6">Welcome Back!</h2>
+//       {error && <p className="text-red-500 text-center">{error}</p>}
+      
+//       <div>
+//         <div className="mb-4">
+//           <label className="block text-blue-900 font-semibold mb-1">Email or Phone</label>
+//           <input
+//             type="text"
+//             placeholder="Enter your email or phone"
+//             className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 text-black-500 "
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//         </div>
+
+//         <div className="mb-4">
+//           <label className="block text-blue-900 font-semibold mb-1">Password</label>
+//           <input
+//             type="password"
+//             placeholder="Enter your password"
+//             className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             autoComplete="current-password"
+//           />
+//         </div>
+
+//         <button
+//           onClick={handleLogin}
+//           className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition"
+//         >
+//           Login
+//         </button>
+//       </div>
+
+//       <p className="text-center text-gray-600 mt-4">
+//         Don't have an account?{" "}
+//         <Link to="/signup" className="text-blue-900 font-bold hover:underline">Sign up</Link>
+//       </p>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -107,7 +192,7 @@ const Login = ({ closeModal }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); 
+    setError("");
 
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {
@@ -144,7 +229,7 @@ const Login = ({ closeModal }) => {
           <input
             type="text"
             placeholder="Enter your email or phone"
-            className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 text-black bg-white placeholder-gray-600"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -155,7 +240,7 @@ const Login = ({ closeModal }) => {
           <input
             type="password"
             placeholder="Enter your password"
-            className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 text-black bg-white placeholder-gray-600"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"

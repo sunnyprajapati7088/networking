@@ -3,6 +3,7 @@ import Carousel from "../components/Carousel";
 import ContactUs from "../components/ContactUs";
 import Landing from "../components/Landing";
 import SlideCourse from "../components/SlideCourse";
+import Testimonials from "../components/Testimonials";
 
   const students = [
     { name: "Rohit", company: "Inventum Technologies", image: "https://th.bing.com/th/id/OIP.lGbo6eNjqJ9WSnCi_jvWewHaKc?rs=1&pid=ImgDetMain" },
@@ -28,6 +29,7 @@ const Home = () => {
      <Carousel/>
       <Landing />
       <ContactUs/>
+      <Testimonials/>
     </div>
   );
 };

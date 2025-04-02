@@ -94,7 +94,7 @@ const Landing = () => {
 
         {/* Right Side: Animated Image */}
         <motion.img
-          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743524059/zucyqw5ft6wn5bwlici8.jpg"
+          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743568477/ppeh4kjfzfqloi19m9n8.jpg  "
           alt="AI Learning"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

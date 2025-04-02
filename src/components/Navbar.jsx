@@ -95,33 +95,28 @@ const Navbar = () => {
             {/* Dropdown Menu */}
             <div className="relative">
               <button 
-                onClick={() => setDropdownOpen(!dropdownOpen)} 
-                className="block py-2 text-gray-700 w-full text-left hover:text-orange-500 focus:outline-none"
+                onClick={() => setDropdownOpen(!dropdownOpen)}   
+                className="block py-2 text-gray-700 w-full text-left hover:text-orange-500 focus:outline-none font-medium text-[20px]"
               >
                 Courses
               </button>
               {dropdownOpen && (
                 <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-50 w-48">
+                  
                   <Link 
-                    to="/courses" 
+                    to="/CareerCoursePage" 
                     className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
                     onClick={() => setIsOpen(false)}
                   >
-                    All Courses
+                   Career courses
+
                   </Link>
                   <Link 
-                    to="/course1" 
+                    to="/CourseComponent" 
                     className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
                     onClick={() => setIsOpen(false)}
                   >
-                    Web Development
-                  </Link>
-                  <Link 
-                    to="/course2" 
-                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Network Security
+                    Modular courses
                   </Link>
                 </div>
               )}
@@ -184,7 +179,8 @@ const Navbar = () => {
             </div>
 
             <button 
-              onClick={() => setShowLogin(true)} // Show login form
+              onClick={() => {setShowLogin(true),setDropdownOpen(!dropdownOpen)}} // Show login form
+            
               className="block py-2 text-gray-700 hover:text-orange-500" 
             >
               Login

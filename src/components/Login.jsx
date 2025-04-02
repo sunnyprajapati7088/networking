@@ -29,7 +29,14 @@ const Login = ({ setShowLogin }) => { // Add a prop to control visibility of log
   
       localStorage.setItem("authToken", data.token);
       alert("Login successful!");
-      navigate("/dashboard");
+      console.log(data)
+      setShowLogin(false);
+      if(data.role === "admin") {
+        navigate("/admin");
+       } // Redirect to admin dashboard if role is admin
+      if(data.role=="user")navigate("/dashboard");
+      // Close the modal after successful login
+
     } catch (err) {
       setError(err.message || "Network error. Please try again.");
     }
@@ -56,7 +63,7 @@ const Login = ({ setShowLogin }) => { // Add a prop to control visibility of log
             <input
               type="text"
               placeholder="Enter your email or phone"
-              className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full text-black p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -67,7 +74,7 @@ const Login = ({ setShowLogin }) => { // Add a prop to control visibility of log
             <input
               type="password"
               placeholder="Enter your password"
-              className="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full p-3 border text-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"

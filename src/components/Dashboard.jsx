@@ -12,7 +12,7 @@ const Dashboard = () => {
         const response = await axios.get("http://localhost:5000/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` }, // Attach token
         });
-
+        console.log(response)
         setUser(response.data.user);
       } catch (err) {
         console.error("Error fetching profile:", err);
@@ -24,7 +24,7 @@ const Dashboard = () => {
   }, []);
   console.log(user)
   return (
-    <div>
+    <div className="mt-20 text-black">
       <h2>Dashboard</h2>
       {user ? <p>Welcome, {user.user}!</p> : <p>Loading...</p>}
     </div>

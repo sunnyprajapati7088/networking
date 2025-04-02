@@ -19,6 +19,10 @@ import DeletePlacement from "./components/DeletePlacement";
 import AddCarousel from "./components/carousel/AddCarousel";
 import ViewCarousel from "./components/carousel/ViewCarousel";
 import EditCarousel from "./components/carousel/EditCarousel";
+import CareerCoursePage from "./components/Courses/CareerCoursePage";
+import CourseComponent from "./components/Courses/CourseComponent";
+import LandingCourse from "./components/Courses/LandingCourse";
+import PlacementComponent from "./components/placement/PlacementComponent";
 
 // function App() {
 //   return (
@@ -63,12 +67,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/placement" element={<Placement />} />
+            <Route path="/placement" element={<PlacementComponent />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/CareerCoursePage" element={<CareerCoursePage/>} />
+            <Route path="/CourseComponent" element={<CourseComponent />} />
+            <Route path="/courses" element={<LandingCourse />} />
             <Route path="/admin" element={<AdminDashboard />}>
               <Route path="/admin/add-placement" element={<AddPlacement />} />
               <Route path="/admin/edit-placement" element={<EditPlacement />} />
