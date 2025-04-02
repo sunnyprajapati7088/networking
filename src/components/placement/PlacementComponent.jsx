@@ -15,9 +15,9 @@ const PlacementComponent = () => {
   const mockData = {
     stats: {
       placementRate: "100%",
-      averagePackage: "6.5 LPA",
-      highestPackage: "15 LPA",
-      totalStudents: "1200+"
+      averagePackage: "4LPA",
+      highestPackage: "12 LPA",
+      totalStudents: "1000+"
     },
     companies: [
       { id: 1, name: "TCS", logo: "https://logo.clearbit.com/tcs.com" },

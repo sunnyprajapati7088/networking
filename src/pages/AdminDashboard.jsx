@@ -170,6 +170,16 @@ const AdminDashboard = () => {
             </div>
           )}
         </div>
+         <div className="mt-4">
+          <Link to={"/admin/AdminCoursePanel"}
+            className="w-full bg-blue-500 p-3 rounded-md hover:bg-blue-600 flex justify-between"
+            onClick={() => setIsCarouselOpen(!isCarouselOpen)}
+          >
+           AdminCoursePanel
+          </Link>
+
+        
+        </div>
       </div>
 
       {/* Main Content */}

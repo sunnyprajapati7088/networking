@@ -94,7 +94,7 @@ const SlideCourse = () => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto">
+    <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto mt-10">
       {loading ? (
         <div className="flex justify-center items-center h-64 sm:h-80 md:h-96 lg:h-[500px]">
           <div className="animate-spin rounded-full h-12 w-12 sm:h-16 sm:w-16 border-b-4 border-orange-500"></div>
@@ -108,7 +108,7 @@ const SlideCourse = () => {
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain "
                     loading="lazy"
                   />
                 </div>

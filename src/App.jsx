@@ -23,6 +23,7 @@ import CareerCoursePage from "./components/Courses/CareerCoursePage";
 import CourseComponent from "./components/Courses/CourseComponent";
 import LandingCourse from "./components/Courses/LandingCourse";
 import PlacementComponent from "./components/placement/PlacementComponent";
+import AdminCoursePanel from "./components/Courses/AdminCoursePanel";
 
 // function App() {
 //   return (
@@ -84,6 +85,7 @@ function App() {
               <Route path="/admin/add-carousel" element={<AddCarousel />} />
               <Route path="/admin/view-carousel" element={<ViewCarousel />} />
               <Route path="/admin/edit-carousel" element={<EditCarousel />} />
+              <Route path="/admin/AdminCoursePanel" element={<AdminCoursePanel/>}/>
             </Route>
           </Routes>
         </main>
