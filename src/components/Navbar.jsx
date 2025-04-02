@@ -153,26 +153,20 @@ const Navbar = () => {
               </button>
               {dropdownOpen && (
                 <div className="absolute left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-50 w-48">
+                  
                   <Link 
-                    to="/courses" 
+                    to="/CourseComponent" 
                     className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
                     onClick={() => setIsOpen(false)}
-                  >
-                    All Courses
+                  > Modular courses
                   </Link>
                   <Link 
-                    to="/course1" 
+                    to="/CareerCoursePage" 
                     className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
                     onClick={() => setIsOpen(false)}
                   >
-                    Web Development
-                  </Link>
-                  <Link 
-                    to="/course2" 
-                    className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white" 
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Network Security
+                    
+                   Career courses
                   </Link>
                 </div>
               )}
