@@ -65,7 +65,7 @@ const SlideCourse = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/carousel")
+    fetch("https://lms-backend-f9h3.onrender.com/api/carousel")
       .then((res) => res.json())
       .then((data) => {
         // Remove duplicate images based on URL
