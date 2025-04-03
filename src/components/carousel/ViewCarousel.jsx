@@ -9,7 +9,7 @@ const ViewCarousel = () => {
     const fetchcarousels = async () => {
       try {
         const authToken = localStorage.getItem("authToken");
-        const response =  await axios.get("http://localhost:5000/api/carousel", {
+        const response =  await axios.get("https://lms-backend-f9h3.onrender.com/api/carousel", {
                   headers: { Authorization: `Bearer ${authToken}` }, // Attach token
                 });
         const data = await response.json();

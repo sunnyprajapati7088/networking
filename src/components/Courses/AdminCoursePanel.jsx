@@ -1112,6 +1112,7 @@ const AdminCoursePanel = ({ onUpdate }) => {
     };
 
     loadData();
+    console.log("Courses:", courses);
   }, [onUpdate]);
 
   const createCourse = async (courseData) => {

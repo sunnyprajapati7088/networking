@@ -7,7 +7,7 @@ const EditCarousel = () => {
   useEffect(() => {
     const fetchCarouselItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/carousel/");
+        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/carousel/");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -25,7 +25,7 @@ const EditCarousel = () => {
 
   const toggleStatus = async (id, currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/carousel/${id}`, {
+      const response = await fetch(`https://lms-backend-f9h3.onrender.com/api/carousel/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
