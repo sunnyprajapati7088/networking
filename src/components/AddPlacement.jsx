@@ -28,7 +28,7 @@
 //     formData.append("file", image);
 
 //     try {
-//       const response = await fetch("http://localhost:5000/api/images/upload", {
+//       const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
 //         method: "POST",
 //         body: formData,
 //       });
@@ -128,7 +128,7 @@ const AddPlacement = () => {
 
     try {
       // Upload image to Cloudinary
-      const response = await fetch("http://localhost:5000/api/images/upload", {
+      const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
         method: "POST",
         body: formData,
       });
@@ -149,7 +149,7 @@ const AddPlacement = () => {
       };
 
       const token = localStorage.getItem("authToken");
-      const placementResponse = await fetch("http://localhost:5000/api/placement/add", {
+      const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

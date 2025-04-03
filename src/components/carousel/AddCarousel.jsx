@@ -28,7 +28,7 @@
 //     formData.append("file", image);
 
 //     try {
-//       const response = await fetch("http://localhost:5000/api/images/upload", {
+//       const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
 //         method: "POST",
 //         body: formData,
 //       });
@@ -130,7 +130,7 @@ const  AddCarousel= () => {
       // Upload image to Cloudinary
       const authToken = localStorage.getItem("authToken");
 
-      const response = await fetch("http://localhost:5000/api/images/upload", {
+      const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${authToken}`, // Adding the token in the Authorization header
@@ -153,7 +153,7 @@ const  AddCarousel= () => {
         // Add any other data you want to send to the backend
       };
 
-      const placementResponse = await fetch("http://localhost:5000/api/carousel/add", {
+      const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/carousel/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

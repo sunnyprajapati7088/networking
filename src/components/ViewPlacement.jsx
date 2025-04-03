@@ -8,7 +8,7 @@ const Placement = () => {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/placement/");
+        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/");
         if (!response.ok) {
           throw new Error("Failed to fetch placements");
         }

@@ -9,7 +9,7 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem("authToken"); // Get token
 
-        const response = await axios.get("http://localhost:5000/api/auth/profile", {
+        const response = await axios.get("https://lms-backend-f9h3.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` }, // Attach token
         });
         console.log(response)

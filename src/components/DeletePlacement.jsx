@@ -8,7 +8,7 @@ const DeletePlacement = () => {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/placement/");
+        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/");
         if (!response.ok) {
           throw new Error("Failed to fetch placements");
         }
@@ -27,10 +27,11 @@ const DeletePlacement = () => {
   // Function to handle the deletion (actually marking as inactive)
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/placement/delete/${id}`, {
+      const response = await fetch(`https://lms-backend-f9h3.onrender.com/api/placement/delete/${id}`, {
         method: "PUT", // Use PUT for updates
       });
       console.log("Response:", response); // Log the response for debugging 
+
       if (response.ok) {
         alert("Placement marked as inactive.");
         setPlacements(placements.filter((placement) => placement._id !== id)); // Remove from the list locally

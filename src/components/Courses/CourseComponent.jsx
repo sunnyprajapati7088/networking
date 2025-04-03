@@ -164,7 +164,7 @@
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 
-// const API_BASE_URL = 'http://localhost:5000/api';
+// const API_BASE_URL = 'https://lms-backend-f9h3.onrender.com/api';
 
 // const CourseComponent = () => {
 //   const [categories, setCategories] = useState([]);
@@ -305,7 +305,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://lms-backend-f9h3.onrender.com/api';
 
 const CourseComponent = () => {
   const [categoriesWithCourses, setCategoriesWithCourses] = useState([]);
@@ -419,7 +419,8 @@ const CourseComponent = () => {
                         <img 
                           src={course.image} 
                           alt={course.name} 
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain
+                          "
                           loading="lazy"
                           onError={(e) => {
                             e.target.onerror = null;

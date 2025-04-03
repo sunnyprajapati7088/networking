@@ -8,7 +8,7 @@ const EditPlacement = () => {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/placement/");
+        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/");
         if (!response.ok) {
           throw new Error("Failed to fetch placements");
         }
@@ -27,7 +27,7 @@ const EditPlacement = () => {
   // Toggle placement status between active and inactive
   const toggleStatus = async (id, currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/placement/${id}`, {
+      const response = await fetch(`https://lms-backend-f9h3.onrender.com/api/placement/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
