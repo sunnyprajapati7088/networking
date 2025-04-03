@@ -75,8 +75,8 @@ import axios from "axios";
 //       setLoading(true);
 //       try {
 //         const [coursesResponse, categoriesResponse] = await Promise.all([
-//           axios.get(`http://localhost:5000/api/courses`),
-//           axios.get(`http://localhost:5000/api/categories`)
+//           axios.get(`https://lms-backend-f9h3.onrender.com/api/courses`),
+//           axios.get(`https://lms-backend-f9h3.onrender.com/api/categories`)
 //         ]);
 //         setCourses(coursesResponse.data);
 //         setCategories(categoriesResponse.data);
@@ -142,8 +142,8 @@ function App() {
       setLoading(true);
       try {
         const [coursesResponse, categoriesResponse] = await Promise.all([
-          axios.get(`http://localhost:5000/api/courses`),
-          axios.get(`http://localhost:5000/api/categories`)
+          axios.get(`https://lms-backend-f9h3.onrender.com/api/courses`),
+          axios.get(`https://lms-backend-f9h3.onrender.com/api/categories`)
         ]);
         setCourses(coursesResponse.data);
         setCategories(categoriesResponse.data);
