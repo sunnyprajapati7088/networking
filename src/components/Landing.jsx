@@ -132,7 +132,7 @@ const Landing = () => {
                   key={course.name}
                   className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
                  
-                 
+                
               
                  
                 >

@@ -419,7 +419,7 @@ const CourseComponent = () => {
                         <img 
                           src={course.image} 
                           alt={course.name} 
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                           loading="lazy"
                           onError={(e) => {
                             e.target.onerror = null;
