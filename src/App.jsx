@@ -179,39 +179,14 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-orange-100 to-blue-100 text-white">
         {/* Pass search handler to Navbar */}
         <Navbar 
-          searchQuery={searchQuery} 
-          setSearchQuery={setSearchQuery} 
-          handleSearch={handleSearch}
+          
         />
         
         <main className="mt-16">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route 
-              path="/courses" 
-              element={
-                <Courses 
-                  courses={searchQuery ? searchedData : courses} 
-                  loading={loading} 
-                />
-              } 
-            />
-            <Route 
-              path="/CareerCoursePage" 
-              element={
-                <CareerCoursePage 
-                  courses={searchQuery ? searchedData : courses} 
-                />
-              } 
-            />
-            <Route 
-              path="/CourseComponent" 
-              element={
-                <CourseComponent 
-                  courses={searchQuery ? searchedData : courses} 
-                />
-              } 
-            />
+            <Route path="/CareerCoursePage" element={<CareerCoursePage />} />
+            <Route path="/CourseComponent" element={<CourseComponent />} />
             <Route path="/placement" element={<PlacementComponent />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
