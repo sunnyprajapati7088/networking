@@ -221,6 +221,7 @@ const Signup = ({ isOpen, onClose }) => {
             className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           >
             <option value="student">Student</option>
+            <option value="admin">Admin</option>
           </select>
 
           <button

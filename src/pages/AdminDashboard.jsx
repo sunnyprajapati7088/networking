@@ -180,6 +180,16 @@ const AdminDashboard = () => {
 
         
         </div>
+        <div className="mt-4">
+          <Link to={"/signup"}
+            className="w-full bg-blue-500 p-3 rounded-md hover:bg-blue-600 flex justify-between"
+           
+          >
+            SignUp
+          </Link>
+
+        
+        </div>
       </div>
 
       {/* Main Content */}
