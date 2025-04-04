@@ -552,21 +552,7 @@ const CareerCoursePage = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-2xl font-semibold mb-8 text-gray-800">
-              International Certification Partners
-            </h3>
-            <div className="flex flex-wrap justify-center gap-8">
-              {courseData.programOverview.certifications.map((cert, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center w-40 h-24 border border-gray-200 hover:shadow-lg transition-shadow"
-                >
-                  <span className="font-medium text-gray-800 text-lg">{cert}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </section>
 
