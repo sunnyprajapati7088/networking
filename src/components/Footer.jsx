@@ -300,8 +300,8 @@ const footerData = {
     { "platform": "Youtube", "url": "https://www.youtube.com/@insjaipur", "icon": "Youtube" }
   ],
   "contact": {
-    "email": "info@networksolution.com",
-    "phone": "+91 07041713818",
+    "email": "info@insjaipur.com",
+    "phone": "+91 9314887355",
     "address": "Plot No.- 65, Kalyan Colony, Khatipura Road, Jaswant Nagar, Jaipur - 302012 (Near Arti Janana Hospital)"
   }
 };
@@ -433,29 +433,29 @@ const Footer = () => {
       </footer>
 
       {/* Sticky WhatsApp and Call Back Buttons */}
-      <div className="fixed bottom-5 right-5 flex flex-col space-y-3 gap-10">
-        {/* WhatsApp Button */}
-        <a 
-          href="https://wa.me/917041713818" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="relative group bg-green-500 text-white p-3 w-[50px] rounded-full shadow-lg hover:scale-110 transition gap-5"
-        >
-          <FaWhatsapp size={24} />
-         
-        </a>
+      <div className="fixed bottom-5 right-5 flex flex-col items-end space-y-3">
+  {/* WhatsApp Button */}
+  <a 
+    href="https://wa.me/919314887355" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center justify-center bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-all duration-300 hover:shadow-2xl w-14 h-14"
+    aria-label="Chat on WhatsApp"
+  >
+    <FaWhatsapp size={28} />
+    <span className="sr-only">WhatsApp</span>
+  </a>
 
-        {/* Call Back Button */}
-        <button 
-          onClick={() => setShowCallbackForm(true)}
-          className="relative group bg-blue-500 text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
-        >
-          <div className="flex gap-2">
-            <FaPhone size={24} />
-            <span>Request a callback</span>
-          </div>
-        </button>
-      </div>
+  {/* Call Back Button */}
+  <button 
+    onClick={() => setShowCallbackForm(true)}
+    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+    aria-label="Request a callback"
+  >
+    <FaPhone size={20} />
+    <span className="text-sm font-medium pr-1">Request a callback</span>
+  </button>
+</div>
 
       {/* Callback Form Modal */}
       {showCallbackForm && (

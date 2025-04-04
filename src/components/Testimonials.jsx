@@ -11,18 +11,41 @@ const Testimonials = () => {
     // Mock data - replace with real API call
     const mockReviews = [
       {
-        author_name: "John Doe",
+        author_name: "Rahul Sharma",
         rating: 5,
-        text: "Excellent service! The team was professional and delivered beyond expectations.",
+        text: "Amazing website! The user interface is very smooth, and I found exactly what I was looking for. Great job!",
+        time: "3 days ago",
+      },
+      {
+        author_name: "Priya Patel",
+        rating: 4,
+        text: "Very helpful and easy to navigate. Could improve the checkout process, but overall a great experience.",
+        time: "1 week ago",
+      },
+      {
+        author_name: "Arjun Singh",
+        rating: 5,
+        text: "Fast loading, clean design, and excellent customer support. Highly recommended!",
         time: "2 weeks ago",
       },
       {
-        author_name: "Jane Smith",
-        rating: 4,
-        text: "Great experience overall, would definitely recommend to others.",
+        author_name: "Ananya Gupta",
+        rating: 3,
+        text: "Decent website, but some features are confusing. Needs better instructions for first-time users.",
+        time: "3 weeks ago",
+      },
+      {
+        author_name: "Vikram Joshi",
+        rating: 5,
+        text: "One of the best websites I've used. The service was quick, and the support team was very responsive.",
         time: "1 month ago",
       },
-      // Add more mock reviews as needed
+      {
+        author_name: "Neha Reddy",
+        rating: 4,
+        text: "Loved the variety of options available. A little slow on mobile, but works perfectly on desktop.",
+        time: "1 month ago",
+      },
     ];
 
     setReviews(mockReviews);
