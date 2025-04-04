@@ -191,7 +191,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/signup" element={<Signup />} />
+            
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses" element={<LandingCourse />} />
             <Route path="/admin" element={<AdminDashboard />}>
@@ -203,6 +203,7 @@ function App() {
               <Route path="/admin/view-carousel" element={<ViewCarousel />} />
               <Route path="/admin/edit-carousel" element={<EditCarousel />} />
               <Route path="/admin/AdminCoursePanel" element={<AdminCoursePanel/>}/>
+              <Route path="/admin/signup" element={<Signup />} />
             </Route>
           </Routes>
         </main>
