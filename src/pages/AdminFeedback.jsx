@@ -19,7 +19,7 @@ const AdminFeedback = () => {
   // Fetch all feedbacks from backend
   const fetchFeedbacks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/feedback");
+      const response = await axios.get("https://lms-backend-f9h3.onrender.com/api/feedback");
       setFeedbacks(response.data);
       setLoading(false);
     } catch (error) {
@@ -31,7 +31,7 @@ const AdminFeedback = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this feedback?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/feedback/${id}`);
+        await axios.delete(`https://lms-backend-f9h3.onrender.com/api/feedback/${id}`);
         setFeedbacks(feedbacks.filter((feedback) => feedback._id !== id));
       } catch (error) {
         console.error("Error deleting feedback:", error);
@@ -52,7 +52,7 @@ const AdminFeedback = () => {
   // Add new feedback
   const handleAddFeedback = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/feedback", newFeedback);
+      const response = await axios.post("https://lms-backend-f9h3.onrender.com/api/feedback", newFeedback);
       setFeedbacks([...feedbacks, response.data]);
       setNewFeedback({ author_name: "", text: "", rating: 5 });
     } catch (error) {
@@ -68,7 +68,7 @@ const AdminFeedback = () => {
   // Save edited feedback
   const handleSaveEdit = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/feedback/${editingFeedback._id}`, editingFeedback);
+      await axios.put(`https://lms-backend-f9h3.onrender.com/api/feedback/${editingFeedback._id}`, editingFeedback);
       setFeedbacks(feedbacks.map((fb) => (fb._id === editingFeedback._id ? editingFeedback : fb)));
       setEditingFeedback(null);
     } catch (error) {

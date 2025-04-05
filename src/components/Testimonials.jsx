@@ -184,7 +184,7 @@ const Testimonials = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/feedback");
+      const response = await axios.get("https://lms-backend-f9h3.onrender.com/api/feedback");
       setReviews(response.data);
     } catch (error) {
       console.error("Error fetching reviews:", error);
@@ -208,7 +208,7 @@ const Testimonials = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await axios.post("http://localhost:5000/api/feedback", formData);
+      await axios.post("https://lms-backend-f9h3.onrender.com/api/feedback", formData);
       fetchFeedbacks(); // Refresh feedbacks after submission
       setFormData({ author_name: "", text: "", rating: 0 }); // Reset form
     } catch (error) {
