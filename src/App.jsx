@@ -27,6 +27,7 @@ import AdminCoursePanel from "./components/Courses/AdminCoursePanel";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AdminFeedback from "./pages/AdminFeedback";
+import AdminEnrollments from "./components/AdminEnrollments";
 
 
 
@@ -206,6 +207,7 @@ function App() {
               <Route path="/admin/AdminCoursePanel" element={<AdminCoursePanel/>}/>
               <Route path="/admin/signup" element={<Signup />} />
               <Route path="/admin/feedback" element={<AdminFeedback />} />
+              <Route path="/admin/enrollments" element={<AdminEnrollments />} />
             </Route>
           </Routes>
         </main>

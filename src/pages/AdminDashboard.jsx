@@ -200,6 +200,16 @@ const AdminDashboard = () => {
 
         
         </div>
+        <div className="mt-4">
+          <Link to={"/admin/enrollments"}
+            className="w-full bg-blue-500 p-3 rounded-md hover:bg-blue-600 flex justify-between"
+           
+          >
+            Admin Enrolment
+          </Link>
+
+        
+        </div>
       </div>
 
       {/* Main Content */}
