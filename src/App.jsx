@@ -26,6 +26,7 @@ import PlacementComponent from "./components/placement/PlacementComponent";
 import AdminCoursePanel from "./components/Courses/AdminCoursePanel";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import AdminFeedback from "./pages/AdminFeedback";
 
 
 
@@ -204,6 +205,7 @@ function App() {
               <Route path="/admin/edit-carousel" element={<EditCarousel />} />
               <Route path="/admin/AdminCoursePanel" element={<AdminCoursePanel/>}/>
               <Route path="/admin/signup" element={<Signup />} />
+              <Route path="/admin/feedback" element={<AdminFeedback />} />
             </Route>
           </Routes>
         </main>

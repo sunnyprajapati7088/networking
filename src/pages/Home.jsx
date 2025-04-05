@@ -71,8 +71,7 @@ import SearchResults from "./SearchResults";
 const Home = () => {
   return (
     <div className=" min-h-screen text-white">
-      {/* Landing Page */}
-    
+
 
    
     <RegularContent/>

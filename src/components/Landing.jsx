@@ -1,165 +1,77 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
-import ContactUs from "./ContactUs";
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+const API_BASE_URL = 'https://lms-backend-f9h3.onrender.com/api';
 
-// JSON structure with course categories, each with an extended description and image
-const coursesData = [
-    {
-      category: "Cisco",
-      courses: [
-        {
-          name: "CCNA",
-          description:
-            "Cisco Certified Network Associate (CCNA) is a foundational certification covering networking fundamentals, IP services, security basics, automation, and programmability. It prepares you for hands-on networking roles.",
-          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743435202/ccna_x20rfz.jpg",
-        },
-        {
-          name: "CCNP",
-          description:
-            "Cisco Certified Network Professional (CCNP) builds on CCNA skills with advanced enterprise networking, infrastructure, and automation topics, ideal for seasoned network professionals.",
-          image: "https://res.cloudinary.com/drz6fzlpu/image/upload/v1743438892/ccnp_ahqtns.jpg",
-        },
-      ],
-    },
-    {
-      category: "Microsoft",
-      courses: [
-        {
-          name: "AZ-800/801",
-          description:
-            "Windows Server Hybrid Core Infrastructure (AZ-800/801) focuses on managing hybrid environments with on-premises and cloud components. This certification covers networking, security, and identity management.",
-          image: "https://images.credly.com/images/cc3c9fd5-123a-439e-a297-e31f40b79aaa/image.png",
-        },
-        {
-          name: "Microsoft Azure Certifications",
-          description:
-            "Microsoft Azure Certifications validate your cloud expertise, ranging from development and security to architecture. They help professionals manage large-scale cloud solutions.",
-          image: "https://th.bing.com/th/id/OIP.v6rlesHwf8qOadRPsUioogHaEo?rs=1&pid=ImgDetMain",
-        },
-      ],
-    },
-    {
-      category: "Red Hat",
-      courses: [
-        {
-          name: "RHCSA",
-          description:
-            "Red Hat Certified System Administrator (RHCSA) proves core Linux administration skills, including user management, file systems, and basic networking, essential for enterprise environments.",
-          image: "https://www.webasha.com/uploads/course/images/633ab9d0b9e281664793040.RHCSA_Training-and-certification.jpg",
-        },
-        {
-          name: "RHCE",
-          description:
-            "Red Hat Certified Engineer (RHCE) is an advanced certification that focuses on automation, enterprise-level security, and network services on Linux, empowering professionals to optimize systems.",
-          image: "https://www.webasha.com/uploads/course/images/633abd8d317691664793997.RHCE_Training-and-certification.jpg",
-        },
-      ],
-    },
-  ];
+
+
 const Landing = () => {
-  return (
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center bg-gradient-to-r from-orange-100 to-blue-100">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Best IT & Networking Courses | RoboGen</title>
-        <meta name="description" content="Learn top courses like CCNA, Azure, and RHCSA with expert guidance. Join RoboGen for hands-on training." />
-        <meta name="keywords" content="CCNA, CCNP, Azure, Linux, RHCSA, Cloud Computing, Networking" />
-        <meta name="author" content="RoboGen" />
-        <meta property="og:title" content="Best IT & Networking Courses | RoboGen" />
-        <meta property="og:description" content="Get certified in top IT courses including Cisco, Microsoft, and Red Hat. Learn from industry experts." />
-        <meta property="og:image" content="https://source.unsplash.com/500x400/?technology,education" />
-        <meta property="og:url" content="https://yourwebsite.com" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
 
-      {/* Hero Section */}
-      <div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="w-full bg-gradient-to-r from-orange-100 to-blue-100 max-w-6xl flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  mt-5 rounded-lg"
-        style={{ minHeight: "80vh" }}
-      >
-        {/* Left Side: Animated Description */}
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold text-gray-800">
-          Transforming Careers Since 1998 
-                 </h1>
-          <p className="text-blue-600 text-2xl  mt-3">
-          Become a Network Engineer, Cloud Engineer, or Security Engineer and Get 100% Job!           </p>
-          <button className="mt-4 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-100 transition duration-300">
-            Explore Courses
-          </button>
-        </div>
-
-        {/* Right Side: Animated Image */}
-        <motion.img
-          src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743568477/ppeh4kjfzfqloi19m9n8.jpg  "
-          alt="AI Learning"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="flex-1 rounded-lg shadow-lg max-w-xs md:max-w-sm "
-        />
-      </div>
-
-     <motion.div
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="w-full max-w-6xl flex flex-col md:flex-row items-center mt-5 justify-center space-y-6 md:space-y-0 md:space-x-10 p-6 bg-white  rounded-lg"
-      style={{ minHeight: "80vh" }}
-    >
-      <div className="mt-10 w-full max-w-6xl px-4 md:px-8 mx-auto">
-        {coursesData.map((category) => (
-          <motion.div
-            key={category.category}
-            className="bg-white shadow-lg rounded-xl p-8 mb-12 border border-gray-200"
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            {/* Category Title */}
-            <h2 className="text-2xl md:text-3xl font-semibold text-orange-500 mb-6">
-              {category.category} Courses
-            </h2>
-
-            {/* Courses Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-              {category.courses.map((course, idx) => (
-                <div
-                  key={course.name}
-                  className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
-                 
-                
-              
-                 
-                >
-                  {/* Course Image */}
-                  <img
-                    src={course.image}
-                    alt={course.name}
-                    className="w-28 h-28 object-cover rounded-md shadow-sm border border-gray-300 transition-all duration-700"
-                  />
-
-                  {/* Course Info */}
-                  <div className="mt-4">
-                    <h3 className="text-lg font-bold text-gray-700">{course.name}</h3>
-                    <p className="text-gray-600 text-sm mt-2">{course.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
   
-      
-
-    </div>
-  );
-};
+    useEffect(() => {
+      const fetchCourses = async () => {
+        try {
+          setLoading(true);
+          setError(null);
+          const response = await axios.get(`${API_BASE_URL}/courses`);
+          setCourses(response.data);
+        } catch (err) {
+          console.error("Error fetching courses:", err);
+          setError("Failed to load courses");
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchCourses();
+    }, []);
+  
+    const sliderSettings = {
+      dots: false,
+      infinite: true,
+      speed: 600,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+      responsive: [
+        { breakpoint: 1280, settings: { slidesToShow: 2 } },
+        { breakpoint: 768, settings: { slidesToShow: 1 } },
+      ],
+    };
+  
+    if (loading) return <p className="text-center text-lg">Loading courses...</p>;
+    if (error) return <p className="text-center text-red-500">{error}</p>;
+  
+    return (
+      <div className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Explore Our Courses</h2>
+        <Slider {...sliderSettings}>
+          {courses.map((course) => (
+            <div key={course._id} className="p-4">
+              <div className="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src={course.image} alt={course.name} className="w-full h-56 object-contain" />
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold text-gray-900">{course.name}</h3>
+                  <p className="text-gray-600 text-sm mt-2">{course.duration}</p>
+                  <p className="text-lg font-bold text-green-500 mt-1">₹{course.salary}</p>
+                  <p className="text-lg  text-black mt-1">{course.description}</p>
+                  <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Enroll Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
+  };
+  
 
 export default Landing;
