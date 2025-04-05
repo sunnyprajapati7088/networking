@@ -205,7 +205,7 @@ function App() {
               <Route path="/admin/view-carousel" element={<ViewCarousel />} />
               <Route path="/admin/edit-carousel" element={<EditCarousel />} />
               <Route path="/admin/AdminCoursePanel" element={<AdminCoursePanel/>}/>
-              <Route path="/admin/signup" element={<Signup />} />
+              <Route path="/admin/signup" element={<Signup/>} />
               <Route path="/admin/feedback" element={<AdminFeedback />} />
               <Route path="/admin/enrollments" element={<AdminEnrollments />} />
             </Route>

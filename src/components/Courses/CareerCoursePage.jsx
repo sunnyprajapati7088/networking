@@ -1,8 +1,9 @@
 
 
-    
 // import React from 'react';
-// import  {Link} from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+
 // const CareerCoursePage = () => {
 //   // All data organized in JSON format
 //   const courseData = {
@@ -103,17 +104,21 @@
 
 //   const maxValue = Math.max(...courseData.salaryGrowth.chart.values);
 
-//   // Function to handle brochure download
-//   const handleDownloadBrochure = () => {
-//     // In a real implementation, this would download a PDF brochure
-//     // For demo purposes, we'll show an alert
-//     alert('Brochure download started! In a real implementation, this would download a PDF containing all course information and images.');
+//   const darkenColor = (hex, percent) => {
+//     hex = hex.replace('#', '');
     
-//     // You would typically have a PDF file or generate one with all the information
-//     // For example:
-//     // window.open('/path/to/brochure.pdf', '_blank');
+//     const r = parseInt(hex.substring(0, 2), 16);
+//     const g = parseInt(hex.substring(2, 4), 16);
+//     const b = parseInt(hex.substring(4, 6), 16);
+  
+//     const darkened = (color) => Math.max(0, Math.min(255, Math.floor(color * (100 - percent) / 100)));
+  
+//     return `#${[
+//       darkened(r).toString(16).padStart(2, '0'),
+//       darkened(g).toString(16).padStart(2, '0'),
+//       darkened(b).toString(16).padStart(2, '0')
+//     ].join('')}`;
 //   };
-
 //   return (
 //     <div className="font-sans bg-gray-50 antialiased">
 //       {/* Hero Section */}
@@ -191,8 +196,6 @@
 //               </p>
 //             </div>
 //           </div>
-
-          
 //         </div>
 //       </section>
 
@@ -227,48 +230,11 @@
 //         </div>
 //       </section>
 
-//       {/* Brochure Images Section */}
-//       {/* <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-//         <div className="max-w-7xl mx-auto">
-//           <div className="text-center mb-12">
-//             <h2 className="text-3xl font-bold text-gray-900">Course Brochure</h2>
-//             <div className="w-20 h-1 bg-indigo-600 mx-auto mt-4 mb-8"></div>
-//             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-//               View our detailed course brochure with all the information you need
-//             </p>
-//           </div>
-          
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-//             {courseData.heroSection.brochureImages.map((image, index) => (
-//               <div key={index} className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-//                 <img 
-//                   src={image} 
-//                   alt={`Brochure page ${index + 1}`} 
-//                   className="w-full h-auto object-cover"
-//                 />
-//               </div>
-//             ))}
-//           </div>
-          
-//           <div className="text-center">
-//             <button 
-//               onClick={handleDownloadBrochure}
-//               className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl inline-flex items-center"
-//             >
-//               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-//               </svg>
-//              <a href="https://drive.google.com/file/d/1g86Ts8B_rfMatyIaOkDihZxTX4MI_1mw/view" target='_blank'  > Download Full Brochure (PDF)</a>
-//             </button>
-//           </div>
-//         </div>
-//       </section> */}
-
 //       {/* Salary Growth Section */}
-//       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+//       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
 //         <div className="max-w-7xl mx-auto">
 //           <div className="text-center mb-16">
-//           <h2 className="text-3xl font-bold text-gray-900">
+//             <h2 className="text-3xl font-bold text-gray-900">
 //               {courseData.salaryGrowth.title}
 //             </h2>
 //             <div className="w-20 h-1 bg-indigo-600 mx-auto mt-4 mb-8"></div>
@@ -279,25 +245,22 @@
           
 //           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 //             {/* Pillar Graph Visualization */}
-//             <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
+//             <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm">
 //               <div className="h-96 flex items-end justify-center space-x-2 sm:space-x-4">
 //                 {courseData.salaryGrowth.chart.values.map((value, index) => (
 //                   <div key={index} className="flex flex-col items-center w-12 sm:w-16">
-//                     {/* Pillar with gradient and shadow */}
 //                     <div 
 //                       className="w-full rounded-t-lg relative transition-all duration-300 hover:opacity-90"
 //                       style={{ 
 //                         height: `${(value / maxValue) * 100}%`,
 //                         background: `linear-gradient(to top, ${courseData.salaryGrowth.chart.colors[index]}, ${darkenColor(courseData.salaryGrowth.chart.colors[index], 10)})`,
-//                         boxShadow: `0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)`
+//                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
 //                       }}
 //                     >
-//                       {/* Value Label */}
 //                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
 //                         {value}{courseData.salaryGrowth.chart.unit}
 //                       </div>
 //                     </div>
-//                     {/* Year Label */}
 //                     <div className="mt-4 text-center w-full">
 //                       <span className="text-sm font-medium text-gray-700">
 //                         {courseData.salaryGrowth.chart.labels[index]}
@@ -389,15 +352,23 @@
 //             Join our ACNP program today and secure your future in the high-growth networking industry!
 //           </p>
 //           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            
-//             <button 
-            
-//               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:bg-opacity-10 transition-colors"
+//             <a
+//               href="/ACNP.pdf"
+//               download="ACNP.pdf"
+//               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:bg-opacity-10 transition-colors flex items-center justify-center"
 //             >
-//                        <a href="https://drive.google.com/file/d/1g86Ts8B_rfMatyIaOkDihZxTX4MI_1mw/view" target='_blank'  > Download Full Brochure (PDF)</a>
-
-//             </button>
-            
+//               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+//               </svg>
+//               Download Brochure (PDF)
+//             </a>
+//             {/* <Link
+//               to="/enroll"
+//               className="bg-white text-indigo-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+//             >
+//               Enroll Now
+//             </Link> */}
+          
 //           </div>
 //         </div>
 //       </section>
@@ -407,9 +378,9 @@
 
 // export default CareerCoursePage;
 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 
 const CareerCoursePage = () => {
   // All data organized in JSON format
@@ -526,6 +497,7 @@ const CareerCoursePage = () => {
       darkened(b).toString(16).padStart(2, '0')
     ].join('')}`;
   };
+
   return (
     <div className="font-sans bg-gray-50 antialiased">
       {/* Hero Section */}
@@ -569,6 +541,15 @@ const CareerCoursePage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {courseData.programOverview.subtitle}
             </p>
+          </div>
+
+          {/* Added new image here */}
+          <div className="mb-16 rounded-xl overflow-hidden shadow-lg">
+            <img 
+              src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743867627/psvlalkflfimiajbymdq.png" 
+              alt="ACNP Program Overview" 
+              className="w-full h-auto object-cover"
+            />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -650,65 +631,15 @@ const CareerCoursePage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Pillar Graph Visualization */}
-            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm">
-              <div className="h-96 flex items-end justify-center space-x-2 sm:space-x-4">
-                {courseData.salaryGrowth.chart.values.map((value, index) => (
-                  <div key={index} className="flex flex-col items-center w-12 sm:w-16">
-                    <div 
-                      className="w-full rounded-t-lg relative transition-all duration-300 hover:opacity-90"
-                      style={{ 
-                        height: `${(value / maxValue) * 100}%`,
-                        background: `linear-gradient(to top, ${courseData.salaryGrowth.chart.colors[index]}, ${darkenColor(courseData.salaryGrowth.chart.colors[index], 10)})`,
-                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                      }}
-                    >
-                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
-                        {value}{courseData.salaryGrowth.chart.unit}
-                      </div>
-                    </div>
-                    <div className="mt-4 text-center w-full">
-                      <span className="text-sm font-medium text-gray-700">
-                        {courseData.salaryGrowth.chart.labels[index]}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 text-center text-sm text-gray-500">
-                * Salary figures based on industry averages for ACNP-certified professionals
-              </div>
-            </div>
-            
-            {/* Job Roles */}
-            <div>
-              <h3 className="text-2xl font-semibold mb-8 text-gray-800">
-                {courseData.jobRoles.title}
-              </h3>
-              <div className="space-y-4">
-                {courseData.jobRoles.roles.map((role, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:bg-indigo-50 transition-colors group shadow-sm hover:shadow-md"
-                  >
-                    <div className="flex-shrink-0 mr-4">
-                      <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-medium group-hover:bg-indigo-700 transition-colors">
-                        {index + 1}
-                      </div>
-                    </div>
-                    <div className="text-lg font-medium text-gray-800 group-hover:text-gray-900 transition-colors">
-                      {role}
-                    </div>
-                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-                      <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        
+
+          {/* Added second image here */}
+          <div className="mt-16 rounded-xl overflow-hidden shadow-lg">
+            <img 
+              src="https://res.cloudinary.com/drz6fzlpu/image/upload/v1743867678/lmnvewidpxmpimdtbl1x.png" 
+              alt="Career Growth with ACNP" 
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
@@ -769,13 +700,12 @@ const CareerCoursePage = () => {
               </svg>
               Download Brochure (PDF)
             </a>
-            {/* <Link
+            <Link
               to="/enroll"
               className="bg-white text-indigo-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Enroll Now
-            </Link> */}
-          
+            </Link>
           </div>
         </div>
       </section>
