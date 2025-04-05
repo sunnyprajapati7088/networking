@@ -16,12 +16,12 @@
 
 // //         {/* Description */}
 // //         <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-// //         About INS
-// // At INS , we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers. Our industry-leading training programs cover A+, Network+, MCSA, RHCSA, CCNA, CCNP, AWS Cloud, MS Azure, Cybersecurity, CEH, and more.
+// //         About Institute of Network Solution
+// // At Institute of Network Solution , we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers. Our industry-leading training programs cover A+, Network+, MCSA, RHCSA, CCNA, CCNP, AWS Cloud, MS Azure, Cybersecurity, CEH, and more.
 
 // // With internationally certified trainers, state-of-the-art infrastructure, and a hands-on approach, we ensure students gain practical skills and expertise. Beyond technical knowledge, we focus on interview preparation, communication skills, and personality development to make you job-ready.
 
-// // Join INS and benefit from 100% job placement with opportunities in leading national and international companies .
+// // Join Institute of Network Solution and benefit from 100% job placement with opportunities in leading national and international companies .
 
 // // 🚀 Start your journey to a successful IT career today! 
 // //         </p>
@@ -72,7 +72,7 @@
 //             transition={{ delay: 0.2, duration: 0.8 }}
 //             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-gray-800"
 //           >
-//             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600">INS</span>
+//             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600">Institute of Network Solution</span>
 //           </motion.h2>
 
 //           {/* Description */}
@@ -83,7 +83,7 @@
 //               transition={{ delay: 0.4, duration: 0.8 }}
 //               className="text-lg leading-relaxed"
 //             >
-//               At <span className="font-semibold text-blue-600">INS</span>, we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers.
+//               At <span className="font-semibold text-blue-600">Institute of Network Solution</span>, we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers.
 //             </motion.p>
 
 //             <motion.div
@@ -125,7 +125,7 @@
 //               transition={{ delay: 1.2, duration: 0.8 }}
 //               className="text-lg font-medium leading-relaxed text-gray-800"
 //             >
-//               Join INS and benefit from <span className="text-blue-600">100% job placement</span> with opportunities in leading national and international companies.
+//               Join Institute of Network Solution and benefit from <span className="text-blue-600">100% job placement</span> with opportunities in leading national and international companies.
 //             </motion.p>
 //           </div>
 
@@ -168,7 +168,7 @@ import { motion } from "framer-motion";
 const aboutData = {
   vision: "To set the benchmark for IT training by creating a workforce that is not just skilled but future-ready, innovative, and globally competitive.",
   mission: "To transform aspiring IT professionals into industry-ready experts through hands-on training, real-world exposure, and career-driven mentorship.",
-  aboutText: "At INS, we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers.",
+  aboutText: "At Institute of Network Solution, we have been transforming careers in IT since 1998, helping aspiring professionals become Network Engineers, Cloud Engineers, and Security Engineers.",
   certifications: {
     cloud: [
       {
@@ -195,7 +195,7 @@ const aboutData = {
     {
       name: "J.R. Jakhar",
       position: "Chairman",
-      description: "J.R. Jakhar, the Chairman of INS, brings over 40 years of expertise across multiple technology domains and has been leading the institute for 27 years. His vision and dedication have shaped INS into a premier training hub, empowering professionals with industry-relevant skills and knowledge."
+      description: "J.R. Jakhar, the Chairman of Institute of Network Solution, brings over 40 years of expertise across multiple technology domaInstitute of Network Solution and has been leading the institute for 27 years. His vision and dedication have shaped INS into a premier training hub, empowering professionals with industry-relevant skills and knowledge."
     },
     {
       name: "Jitendra Jakhar",
@@ -210,12 +210,12 @@ const aboutData = {
     {
       name: "Anil Kumar",
       position: "Placement Head",
-      description: "Anil Kumar connects INS students with top IT career opportunities through strategic career guidance and industry collaborations. His expertise ensures a high placement success rate, preparing students to excel in the job market."
+      description: "Anil Kumar connects Institute of Network Solution students with top IT career opportunities through strategic career guidance and industry collaborations. His expertise ensures a high placement success rate, preparing students to excel in the job market."
     },
     {
       name: "Ashish Muwal",
       position: "Admin Head",
-      description: "Ashish Muwal ensures seamless administration, optimizing INS's operations for a smooth learning experience."
+      description: "Ashish Muwal ensures seamless administration, optimizing Institute of Network Solution's operations for a smooth learning experience."
     },
     {
       name: "Bharat Bhakar",
@@ -265,7 +265,7 @@ const About = () => {
         >
           <div className="p-8 md:p-12 lg:p-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-800">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600">INS</span>
+              About <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-600">Institute of Network Solution</p>
             </h2>
             
             <div className="space-y-6 text-gray-700 max-w-4xl mx-auto">
@@ -290,7 +290,7 @@ const About = () => {
               </div>
 
               <p className="text-lg font-medium leading-relaxed text-gray-800">
-                Join INS and benefit from <span className="text-blue-600">100% job placement</span> with opportunities in leading national and international companies.
+                Join Institute of Network Solution and benefit from <span className="text-blue-600">100% job placement</span> with opportunities in leading national and international companies.
               </p>
             </div>
           </div>
@@ -382,7 +382,7 @@ const About = () => {
         </motion.section>
 
         {/* CTA Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -407,7 +407,7 @@ const About = () => {
               View Courses
             </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
