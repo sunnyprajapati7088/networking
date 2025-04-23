@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { FaPlus, FaEye, FaEdit, FaTrash, FaBars, FaTimes, FaImages } from "react-icons/fa";
+import Signup from "../components/SignUp";
 
 const AdminDashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showSignupAdmin,setShowSignupAdmin]=useState(false);
 
   const handleMenuClick = () => {
     if (window.innerWidth < 1024) {
@@ -98,7 +100,6 @@ const AdminDashboard = () => {
         <div className="mt-4">
           <Link to={"/admin/signup"}
             className="w-full bg-blue-500 p-3 rounded-md hover:bg-blue-600 flex justify-between"
-           
           >
             SignUp
           </Link>
@@ -131,6 +132,7 @@ const AdminDashboard = () => {
       <div className="flex-1 p-6 overflow-auto h-screen">
         <Outlet /> {/* Dynamic content */}
       </div>
+      {showSignupAdmin && <Signup setShowSignupAdmin={setShowSignupAdmin} />}
     </div>
   );
 };

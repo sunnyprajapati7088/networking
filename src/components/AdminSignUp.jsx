@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Login from "../components/Login";
 import { FaTimes } from "react-icons/fa";
 
-const SignUp = ({ setShowSignupAdmin }) => {
+const AdminSignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(""); // ✅ New state for phone number
@@ -50,9 +50,7 @@ const SignUp = ({ setShowSignupAdmin }) => {
 
   return (
     <>
-      {showLogin ? (
-        <Login setShowLogin={setShowLogin} />
-      ) : (
+
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full relative">
             {/* Close Button */}
@@ -148,9 +146,9 @@ const SignUp = ({ setShowSignupAdmin }) => {
             </p>
           </div>
         </div>
-      )}
+ 
     </>
   );
 };
 
-export default SignUp;
+export default AdminSignUp;

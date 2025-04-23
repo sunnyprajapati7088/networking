@@ -189,7 +189,7 @@ const Login = ({ closeModal }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  const [showsignup,setshowSignup]=useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -257,7 +257,7 @@ const Login = ({ closeModal }) => {
 
       <p className="text-center text-gray-600 mt-4">
         Don't have an account?{" "}
-        <Link to="/signup" className="text-blue-900 font-bold hover:underline">Sign up</Link>
+        <Link to="/signup" className="text-blue-900 font-bold hover:underline">Sign upo</Link>
       </p>
     </div>
   );

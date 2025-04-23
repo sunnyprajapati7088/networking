@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa"; // Import the cross icon
 
-const Login = ({ setShowLogin }) => { // Add a prop to control visibility of login form
+const Login = ({ setShowLogin,showSignup ,setShowSignup}) => { // Add a prop to control visibility of login form
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -91,9 +92,11 @@ const Login = ({ setShowLogin }) => { // Add a prop to control visibility of log
 
         <p className="text-center text-gray-600 mt-4">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-blue-900 font-bold hover:underline">Sign up</Link>
+          <button to="/signup" onClick={()=>{setShowSignup(true);setShowLogin(false)}}className="text-blue-900 font-bold hover:underline">Sign up</button>
         </p>
       </div>
+      {showSignup && <Signup setShowSignup={setShowSignup} />}
+   {console.log(showSignup)}
     </div>
   );
 };

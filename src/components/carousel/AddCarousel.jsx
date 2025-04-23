@@ -130,7 +130,7 @@ const  AddCarousel= () => {
       // Upload image to Cloudinary
       const authToken = localStorage.getItem("authToken");
 
-      const response = await fetch("https://local-f9h3.onrender.com/api/images/upload", {
+      const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${authToken}`, // Adding the token in the Authorization header

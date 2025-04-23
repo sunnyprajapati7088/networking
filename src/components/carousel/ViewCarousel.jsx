@@ -12,7 +12,8 @@ const ViewCarousel = () => {
         const response =  await axios.get("https://lms-backend-f9h3.onrender.com/api/carousel", {
                   headers: { Authorization: `Bearer ${authToken}` }, // Attach token
                 });
-        const data = await response.json();
+        const data =  response.data
+        
         setcarousels(data.filter((carousel) => carousel.isActive === true));
         setLoading(false);
       } catch (error) {
