@@ -48,16 +48,17 @@ const RegularContent = () => {
 
             {/* Google Map Section */}
             <div className="mt-8 px-4">
-                <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">Our Location</h2>
-                <div className="w-full h-72 rounded-lg overflow-hidden shadow-lg">
-                    <iframe
-                        className="w-full h-full"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.8852643063426!2d75.76187567538684!3d26.89156386024239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db4873aaaaaab%3A0x123456789abcdef!2s64-65%2C%20near%20Aarti%20Zanana%20Hospital%2C%20Kalyan%20Colony%2C%20Khatipura%2C%20Jaipur%2C%20Rajasthan%20302021!5e0!3m2!1sen!2sin!4v1711989876543!5m2!1sen!2sin"
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
-                </div>
-            </div>
+    <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">Our Location</h2>
+    <div className="w-full h-72 rounded-lg overflow-hidden shadow-lg">
+        <iframe
+            className="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.226373703946!2d75.7400190753873!3d26.92467137664879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db384887b328d%3A0xa416c5a7c4342827!2sINS%3A%20Institute%20of%20Network%20Solutions!5e0!3m2!1sen!2sin!4v1715062764517!5m2!1sen!2sin"
+            allowFullScreen=""
+            loading="lazy"
+        ></iframe>
+    </div>
+</div>
+
         </div>
     );
 };

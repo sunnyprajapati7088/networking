@@ -346,33 +346,34 @@ const PlacementComponent = () => {
     </div>
         </section>
 
-        {/* Placements Grid Section */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Placed Students</h2>
-          {placements.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {placements.map((placement) => (
-                <div key={placement._id || placement.id} className="aspect-square">
-                  <div className="w-full h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <img
-                      src={placement.image}
-                      alt="Placed student"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform"
-                      onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/300?text=Student';
-                        e.target.className = 'w-full h-full object-contain bg-gray-100 p-4';
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-10 text-gray-500">
-              No placement images available
-            </div>
-          )}
-        </section>
+  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Placed Students</h2>
+  {placements.length > 0 ? (
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+      {placements.map((placement) => (
+        <div
+          key={placement._id || placement.id}
+          className="w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200"
+        >
+          <img
+            src={placement.image}
+            alt="Placed student"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/300?text=Student';
+              e.target.className = 'w-full h-auto object-contain bg-gray-100 p-4';
+            }}
+          />
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div className="text-center py-10 text-gray-500">
+      No placement images available
+    </div>
+  )}
+</section>
+
       </div>
     </div>
   );
