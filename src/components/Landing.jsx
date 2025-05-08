@@ -163,7 +163,7 @@ const Landing = () => {
               <div className="p-5">
                 <h3 className="text-xl font-semibold text-gray-900">{course.name}</h3>
                 <p className="text-gray-600 text-sm mt-2">{course.duration}</p>
-                <p className="text-lg font-bold text-green-500 mt-1">₹{course.salary}</p>
+                <p className="text-lg font-bold text-green-500 mt-1">{course.salary}</p>
                 <p className="text-lg text-black mt-1">{course.description}</p>
                 <button onClick={() => handleEnrollClick(course)} className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                   Enroll Now
