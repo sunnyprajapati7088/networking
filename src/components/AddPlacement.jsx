@@ -107,6 +107,7 @@ const AddPlacement = () => {
   const [uploading, setUploading] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
 
+      const token = localStorage.getItem("authToken");
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -131,7 +132,8 @@ const AddPlacement = () => {
       const response = await fetch("https://lms-backend-f9h3.onrender.com/api/images/upload", {
         method: "POST",
         body: formData,
-      });
+        
+      },);
 
       if (!response.ok) {
         throw new Error("Upload failed");
@@ -148,13 +150,12 @@ const AddPlacement = () => {
         // Add any other data you want to send to the backend
       };
 
-      const token = localStorage.getItem("authToken");
       const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-           Authorization: `Bearer ${token}`
-        },
+          Authorization: `Bearer ${token}`, // Adding the token in the Authorization header
+        },  
         body: JSON.stringify(placementData),
       });
       

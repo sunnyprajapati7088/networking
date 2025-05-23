@@ -106,7 +106,7 @@ const  AddCarousel= () => {
   const [preview, setPreview] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
-
+const token = localStorage.getItem("authToken");
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -153,10 +153,18 @@ const  AddCarousel= () => {
         // Add any other data you want to send to the backend
       };
 
-      const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/carousel/add", {
+      // const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/carousel/add", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(placementData),
+      // });
+          const placementResponse = await fetch("https://lms-backend-f9h3.onrender.com/api/carousel/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`, // Adding the token in the Authorization header
         },
         body: JSON.stringify(placementData),
       });

@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 const EditPlacement = () => {
   const [placements, setPlacements] = useState([]);
   const [loading, setLoading] = useState(true);
-
+const token = localStorage.getItem("authToken"); 
   // Fetch placement data from the API
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/");
+        const response = await fetch("https://lms-backend-f9h3.onrender.com/api/placement/",{ headers: { Authorization: `Bearer ${token}` },});
         if (!response.ok) {
           throw new Error("Failed to fetch placements");
         }
@@ -31,6 +31,7 @@ const EditPlacement = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Add your token here
         },
         body: JSON.stringify({
           isActive: !currentStatus, // Toggle status
