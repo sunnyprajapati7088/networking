@@ -29,8 +29,8 @@
 //         { id: 7, name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
 //         { id: 8, name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" }
 //       ],
-    
-      
+
+
 //     };
 
 //   // API call simulation
@@ -38,19 +38,19 @@
 //     const fetchPlacementData = async () => {
 //       try {
 //         setLoading(true);
-        
+
 //         // Replace these with actual API calls
 //         // const statsResponse = await fetch('/api/placement-stats');
 //         // const companiesResponse = await fetch('/api/company-logos');
 //         // const placementsResponse = await fetch('/api/previous-placements');
-        
+
 //         // Simulate API delay
 //         await new Promise(resolve => setTimeout(resolve, 1000));
-        
+
 //         setPlacementStats(mockData.stats);
 //         setCompanyLogos(mockData.companies);
 //         setPreviousPlacements(mockData.placements);
-        
+
 //         setLoading(false);
 //       } catch (err) {
 //         setError(err.message);
@@ -174,7 +174,7 @@
 //                       alt={placement.name} 
 //                       className="w-16 h-16 rounded-full object-cover border-2 border-blue-500"
 //                     />
-                   
+
 //                 </div>
 //               </div>
 //             ))}
@@ -207,14 +207,14 @@ const PlacementComponent = () => {
       totalStudents: "1000+"
     },
     companies: [
-      { id: 1, name: "TCS", logo: "https://logo.clearbit.com/tcs.com" },
-      { id: 2, name: "Infosys", logo: "https://logo.clearbit.com/infosys.com" },
-      { id: 3, name: "Wipro", logo: "https://logo.clearbit.com/wipro.com" },
-      { id: 4, name: "HCL", logo: "https://logo.clearbit.com/hcl.com" },
-      { id: 5, name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
-      { id: 6, name: "IBM", logo: "https://logo.clearbit.com/ibm.com" },
-      { id: 7, name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
-      { id: 8, name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" }
+      // { id: 1, name: "TCS", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" },
+      { id: 2, name: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" },
+      { id: 3, name: "Wipro", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" },
+      // { id: 4, name: "HCL", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/HCL_Technologies_logo.svg" },
+      { id: 5, name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
+      { id: 6, name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+      { id: 7, name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" },
+      { id: 8, name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" }
     ]
   };
 
@@ -259,7 +259,7 @@ const PlacementComponent = () => {
           throw new Error("Failed to fetch placements");
         }
         const data = await response.json();
-        const activePlacements = data.filter(placement => 
+        const activePlacements = data.filter(placement =>
           placement.isActive === true && placement.image
         );
         setPlacements(activePlacements);
@@ -326,9 +326,9 @@ const PlacementComponent = () => {
               {mockData.companies.map((company) => (
                 <div key={company.id} className="px-2">
                   <div className="flex items-center justify-center h-20">
-                    <img 
-                      src={company.logo} 
-                      alt={company.name} 
+                    <img
+                      src={company.logo}
+                      alt={company.name}
                       className="max-h-16 max-w-full object-contain hover:scale-110 transition-transform duration-300"
                       onError={(e) => {
                         e.target.src = 'https://via.placeholder.com/150?text=' + company.name;
@@ -340,39 +340,39 @@ const PlacementComponent = () => {
             </Slider>
           </div>
           <div className="mt-4 text-center text-xs text-gray-500">
-      <p>Company logos are displayed for informational purposes only.</p>
-      <p>All trademarks and logos are the property of their respective owners.</p>
-      <p>Their appearance does not imply endorsement or affiliation.</p>
-    </div>
+            <p>Company logos are displayed for informational purposes only.</p>
+            <p>All trademarks and logos are the property of their respective owners.</p>
+            <p>Their appearance does not imply endorsement or affiliation.</p>
+          </div>
         </section>
 
         <section>
-  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Placed Students</h2>
-  {placements.length > 0 ? (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
-      {placements.map((placement) => (
-        <div
-          key={placement._id || placement.id}
-          className="w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200"
-        >
-          <img
-            src={placement.image}
-            alt="Placed student"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            onError={(e) => {
-              e.target.src = 'https://via.placeholder.com/300?text=Student';
-              e.target.className = 'w-full h-auto object-contain bg-gray-100 p-4';
-            }}
-          />
-        </div>
-      ))}
-    </div>
-  ) : (
-    <div className="text-center py-10 text-gray-500">
-      No placement images available
-    </div>
-  )}
-</section>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Placed Students</h2>
+          {placements.length > 0 ? (
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+              {placements.map((placement) => (
+                <div
+                  key={placement._id || placement.id}
+                  className="w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200"
+                >
+                  <img
+                    src={placement.image}
+                    alt="Placed student"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.src = 'https://via.placeholder.com/300?text=Student';
+                      e.target.className = 'w-full h-auto object-contain bg-gray-100 p-4';
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-10 text-gray-500">
+              No placement images available
+            </div>
+          )}
+        </section>
 
       </div>
     </div>
