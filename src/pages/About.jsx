@@ -207,11 +207,11 @@ const aboutData = {
       position: "Mentor & Industry Advisor",
       description: "A NIT alumni with extensive experience in engineering customer and employee experiences, Chandrashekhar provides valuable guidance to students at INS. As a cloud solutions and network engineering expert, he helps shape training programs that align with industry needs. His deep knowledge of AI, automation, and agile methodologies ensures that students gain insights into the latest technological advancements."
     },
-    {
-      name: "Anil Kumar",
-      position: "Placement Head",
-      description: "Anil Kumar connects Institute of Network Solution students with top IT career opportunities through strategic career guidance and industry collaborations. His expertise ensures a high placement success rate, preparing students to excel in the job market."
-    },
+    // {
+    //   name: "Anil Kumar",
+    //   position: "Placement Head",
+    //   description: "Anil Kumar connects Institute of Network Solution students with top IT career opportunities through strategic career guidance and industry collaborations. His expertise ensures a high placement success rate, preparing students to excel in the job market."
+    // },
     {
       name: "Ashish Muwal",
       position: "Admin Head",
